@@ -1,3 +1,4 @@
+package usa.stqa.pft.sandbox;
 
 public class Point {
 
