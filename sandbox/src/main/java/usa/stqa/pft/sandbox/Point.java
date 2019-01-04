@@ -33,12 +33,4 @@ public class Point {
         Assert.assertEquals(p1.distance(p2), 0.31622776601683794);
 		System.out.println("Expected results " + p1.distance(p2));
     }
-    
-//    @Test
-//	public void testPoint() {
-//		distance p = new distance(p1, p2);
-//
-//		//Assert.assertEquals(p.distance(), 25);
-//		Assert.assertEquals(p.distance(), 0.31622776601683794);
-//		System.out.println("Expected results " + p1.distance(p2));
 }
