@@ -25,34 +25,55 @@ public class ClassCreationClass {
 		driver = new ChromeDriver();
 		baseUrl = "https://www.katalon.com/";
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		login("admin", "secret");
+	}
+
+	private void login(String username, String password) {
+		driver.get("http://localhost/addressbook/index.php");
+		driver.findElement(By.name("user")).clear();
+		driver.findElement(By.name("user")).sendKeys(username);
+		driver.findElement(By.name("pass")).clear();
+		driver.findElement(By.name("pass")).sendKeys(password);
+		driver.findElement(
+				By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Password:'])[1]/following::input[2]"))
+				.click();
 	}
 
 	@Test
 	public void testClassCreation() {
-		driver.get("http://localhost/addressbook/index.php");
-		driver.findElement(By.name("user")).clear();
-		driver.findElement(By.name("user")).sendKeys("admin");
-		driver.findElement(By.name("pass")).clear();
-		driver.findElement(By.name("pass")).sendKeys("secret");
-		driver.findElement(
-				By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Password:'])[1]/following::input[2]"))
-				.click();
-		driver.findElement(By.linkText("add new")).click();
-		driver.findElement(By.name("firstname")).click();
-		driver.findElement(By.name("firstname")).clear();
-		driver.findElement(By.name("firstname")).sendKeys("Ievgeniia");
-		driver.findElement(By.name("lastname")).clear();
-		driver.findElement(By.name("lastname")).sendKeys("Gaidarenko");
-		driver.findElement(By.name("mobile")).click();
-		driver.findElement(By.name("mobile")).clear();
-		driver.findElement(By.name("mobile")).sendKeys("571-241-6524");
-		driver.findElement(By.name("email")).click();
-		driver.findElement(By.name("email")).clear();
-		driver.findElement(By.name("email")).sendKeys("gaidarenko1241@gmail.com");
+		addNewContact();
+		fillFormContact(new GroupContactData("Ievgeniia", "Gaidarenko", "571-241-6524", "gaidarenko1241@gmail.com"));
+		submitNewContact();
+		logout();
+	}
+
+	private void logout() {
+		driver.findElement(By.linkText("Logout")).click();
+	}
+
+	private void submitNewContact() {
 		driver.findElement(
 				By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Notes:'])[1]/following::input[1]"))
 				.click();
-		driver.findElement(By.linkText("Logout")).click();
+	}
+
+	private void fillFormContact(GroupContactData parameterObject) {
+		driver.findElement(By.name("firstname")).click();
+		driver.findElement(By.name("firstname")).clear();
+		driver.findElement(By.name("firstname")).sendKeys(parameterObject.getFirstName());
+		driver.findElement(By.name("lastname")).click();
+		driver.findElement(By.name("lastname")).clear();
+		driver.findElement(By.name("lastname")).sendKeys(parameterObject.getLastName());
+		driver.findElement(By.name("mobile")).click();
+		driver.findElement(By.name("mobile")).clear();
+		driver.findElement(By.name("mobile")).sendKeys(parameterObject.getMobileNumber());
+		driver.findElement(By.name("email")).click();
+		driver.findElement(By.name("email")).clear();
+		driver.findElement(By.name("email")).sendKeys(parameterObject.getEmailAddress());
+	}
+
+	private void addNewContact() {
+		driver.findElement(By.linkText("add new")).click();
 	}
 
 	@AfterClass(alwaysRun = true)
