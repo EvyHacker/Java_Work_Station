@@ -3,13 +3,13 @@ package usa.stqa.pft.addressbook;
 public class GroupContactData {
 	private String firstName;
 	private String lastName;
-	private String mobileNumber;
+	private String phoneNumber;
 	private String emailAddress;
 
-	public GroupContactData(String firstName, String lastName, String mobileNumber, String emailAddress) {
+	public GroupContactData(String firstName, String lastName, String phoneNumber, String emailAddress) {
 		this.firstName = firstName;
 		this.lastName = lastName;
-		this.mobileNumber = mobileNumber;
+		this.phoneNumber = phoneNumber;
 		this.emailAddress = emailAddress;
 	}
 
@@ -21,8 +21,8 @@ public class GroupContactData {
 		return lastName;
 	}
 
-	public String getMobileNumber() {
-		return mobileNumber;
+	public String getPhoneNumber() {
+		return phoneNumber;
 	}
 
 	public String getEmailAddress() {
