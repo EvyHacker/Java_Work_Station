@@ -6,13 +6,11 @@ public class GroupDeletionClass extends TestBase{
 
 
 	@Test
-	public void testGroupDeletionContact() {
-		app.goToContactPage();
-		app.selectContact();
-		//acceptNextAlert = true;
-		app.deleteSelectedContact();
-		//assertTrue(closeAlertAndGetItsText().matches("^Delete 1 addresses[\\s\\S]$"));
-		app.goToContactPage();
+	public void testGroupDeletionContact() throws InterruptedException {
+		app.getNavigationContactHelper().goToContactPage();
+		app.getContactHelper().selectContact();
+		app.getContactHelper().deleteSelectedContact();
+		app.getNavigationContactHelper().goToContactPage();
 		
 	}
 
