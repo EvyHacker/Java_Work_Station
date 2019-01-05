@@ -3,10 +3,20 @@ package usa.stqa.pft.addressbook;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class ApplicationManager {
+
+	public static boolean isAlertPresent(ChromeDriver wd) {
+		try {
+			wd.switchTo().alert();
+			return true;
+		} catch (NoAlertPresentException e) {
+			return false;
+		}
+	}
 
 	WebDriver wd;
 
@@ -63,6 +73,42 @@ public class ApplicationManager {
 	}
 
 	protected void selectGroup() {
+		wd.findElement(By.name("selected[]")).click();
+	}
+
+	protected void goToContactPage() {
+		wd.findElement(By.linkText("home")).click();
+	}
+
+	protected void submitContactCreation() {
+		wd.findElement(By.xpath("(//input[@name='submit'])[2]")).click();
+	}
+
+	protected void fillFormContact(GroupContactData parameterObject) {
+		wd.findElement(By.name("firstname")).click();
+		wd.findElement(By.name("firstname")).clear();
+		wd.findElement(By.name("firstname")).sendKeys(parameterObject.getFirstName());
+		wd.findElement(By.name("lastname")).click();
+		wd.findElement(By.name("lastname")).clear();
+		wd.findElement(By.name("lastname")).sendKeys(parameterObject.getLastName());
+		wd.findElement(By.name("mobile")).click();
+		wd.findElement(By.name("mobile")).clear();
+		wd.findElement(By.name("mobile")).sendKeys(parameterObject.getPhoneNumber());
+		wd.findElement(By.name("email")).click();
+		wd.findElement(By.name("email")).clear();
+		wd.findElement(By.name("email")).sendKeys(parameterObject.getEmailAddress());
+	}
+
+	protected void addNewContact() {
+		wd.findElement(By.linkText("add new")).click();
+	}
+
+	protected void deleteSelectedContact() {
+		wd.findElement(By.xpath("//input[@value='Delete']")).click();
+		wd.findElement(By.xpath("//body")).click();
+	}
+
+	protected void selectContact() {
 		wd.findElement(By.name("selected[]")).click();
 	}
 
