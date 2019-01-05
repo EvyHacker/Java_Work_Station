@@ -1,4 +1,4 @@
-package usa.stqa.pft.addressbook;
+package usa.stqa.pft.addressbook.model;
 
 public class GroupContactData {
 	private String firstName;

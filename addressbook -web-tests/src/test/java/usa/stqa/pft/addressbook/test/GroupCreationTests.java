@@ -1,6 +1,8 @@
-package usa.stqa.pft.addressbook;
+package usa.stqa.pft.addressbook.test;
 
 import org.testng.annotations.Test;
+
+import usa.stqa.pft.addressbook.model.GroupData;
 
 public class GroupCreationTests extends TestBase {
 	@Test
