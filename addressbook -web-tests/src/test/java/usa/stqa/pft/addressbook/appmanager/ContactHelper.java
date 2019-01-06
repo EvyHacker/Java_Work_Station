@@ -13,38 +13,38 @@ public class ContactHelper {
 	}
 
 	public void submitContactCreation() {
-		wd.findElement(By.xpath("(//input[@name='submit'])[2]")).click();
+		click(By.xpath("(//input[@name='submit'])[2]"));
+	}
+
+	private void click(By locator) {
+		wd.findElement(locator).click();
 	}
 
 	public void fillFormContact(GroupContactData parameterObject) {
-		wd.findElement(By.name("firstname")).click();
-		wd.findElement(By.name("firstname")).clear();
-		wd.findElement(By.name("firstname")).sendKeys(parameterObject.getFirstName());
-		wd.findElement(By.name("lastname")).click();
-		wd.findElement(By.name("lastname")).clear();
-		wd.findElement(By.name("lastname")).sendKeys(parameterObject.getLastName());
-		wd.findElement(By.name("mobile")).click();
-		wd.findElement(By.name("mobile")).clear();
-		wd.findElement(By.name("mobile")).sendKeys(parameterObject.getPhoneNumber());
-		wd.findElement(By.name("email")).click();
-		wd.findElement(By.name("email")).clear();
-		wd.findElement(By.name("email")).sendKeys(parameterObject.getEmailAddress());
+		type(By.name("firstname"), parameterObject.getFirstName());
+		type(By.name("lastname"), parameterObject.getLastName());
+		type(By.name("mobile"), parameterObject.getPhoneNumber());
+		type(By.name("email"), parameterObject.getEmailAddress());
+	}
+
+	private void type(By locator, String text) {
+		wd.findElement(locator).click();
+		wd.findElement(locator).clear();
+		wd.findElement(locator).sendKeys(text);
 	}
 
 	public void addNewContact() {
-		wd.findElement(By.linkText("add new")).click();
+		click(By.linkText("add new"));
 	}
 
 	public void deleteSelectedContact() throws InterruptedException {
-		wd.findElement(By.xpath("//*[@id=\"maintable\"]/tbody/tr[2]/td[8]/a/img")).click();
-		wd.findElement(By.name("update")).click();
-//		Thread.sleep(4000);
-//		wd.findElement(By.xpath("//body")).click();
-	
+		click(By.xpath("//*[@id=\"maintable\"]/tbody/tr[2]/td[8]/a/img"));
+		click(By.name("update"));
+
 	}
 
 	public void selectContact() {
-		wd.findElement(By.name("selected[]")).click();
+		click(By.name("selected[]"));
 	}
 
 }
