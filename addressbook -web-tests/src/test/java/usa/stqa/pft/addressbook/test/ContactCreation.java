@@ -1,10 +1,10 @@
 package usa.stqa.pft.addressbook.test;
 
-import org.junit.Test;
+import org.testng.annotations.*;
 import usa.stqa.pft.addressbook.model.GroupContactData;
 import usa.stqa.pft.addressbook.model.GroupData;
 
-public class GroupCreationClass extends TestBase {
+public class ContactCreation extends TestBase {
 
 
     @Test

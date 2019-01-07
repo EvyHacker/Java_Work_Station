@@ -14,11 +14,18 @@ public class ApplicationManager {
         return contactHelper;
     }
 
-    private HelperBase groupHelper;
-
-    public HelperBase getGrouphelper() {
-        return groupHelper;
+    private GroupHelper groupHelper ;
+    
+    public GroupHelper getGroupHelper() {
+    	return groupHelper;
     }
+    
+    
+   // private HelperBase groupHelper;
+
+//    public HelperBase getGrouphelper() {
+//        return groupHelper;
+//    }
 
     private NavigationHelper navigationHelper;
 
