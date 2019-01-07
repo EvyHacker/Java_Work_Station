@@ -11,7 +11,7 @@ public class GroupDeletionClass extends TestBase{
 		app.getContactHelper().selectContact();
 		app.getContactHelper().deleteSelectedContact();
 		app.getNavigationContactHelper().goToContactPage();
-		
+
 	}
 
 }

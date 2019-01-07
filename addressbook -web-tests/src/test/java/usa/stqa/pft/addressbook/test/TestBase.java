@@ -6,16 +6,16 @@ import org.testng.annotations.BeforeMethod;
 import usa.stqa.pft.addressbook.appmanager.ApplicationManager;
 
 public class TestBase {
-	protected final ApplicationManager app = new ApplicationManager();
+    protected final ApplicationManager app = new ApplicationManager();
 
-	@BeforeMethod
-	public void setUp() throws Exception {
-		app.init();
-	}
+    @BeforeMethod
+    public void setUp() throws Exception {
+        app.init();
+    }
 
-	@AfterMethod
-	public void tearDown() throws Exception {
-		app.stop();
+    @AfterMethod
+    public void tearDown() throws Exception {
+        app.stop();
 
-	}
+    }
 }

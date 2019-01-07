@@ -5,14 +5,14 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 public class NavigationHelper {
 
-	protected ChromeDriver wd;
+    protected ChromeDriver wd;
 
-	public NavigationHelper(ChromeDriver wd) {
-		this.wd = wd;
-	}
+    public NavigationHelper(ChromeDriver wd) {
+        this.wd = wd;
+    }
 
-	public void gotoGroupPage() {
-		wd.findElement(By.linkText("groups")).click();
-	}
+    public void gotoGroupPage() {
+        wd.findElement(By.linkText("groups")).click();
+    }
 
 }

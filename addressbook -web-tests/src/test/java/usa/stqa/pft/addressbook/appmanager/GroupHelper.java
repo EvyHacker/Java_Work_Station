@@ -6,46 +6,46 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import usa.stqa.pft.addressbook.model.GroupData;
 
 public class GroupHelper {
-	private ChromeDriver wd;
-	
-	public GroupHelper(ChromeDriver wd) {
-		this.wd = wd;
-	}
+    private ChromeDriver wd;
 
-	public void returnToGroupPage() {
-		wd.findElement(By.linkText("Logout")).click();
-	}
+    public GroupHelper(ChromeDriver wd) {
+        this.wd = wd;
+    }
 
-	public void submitGroupCreation() {
-		click(By.name("submit"));
-	}
+    public void returnToGroupPage() {
+        wd.findElement(By.linkText("Logout")).click();
+    }
 
-	private void click(By locator) {
-		wd.findElement(locator).click();
-	}
+    public void submitGroupCreation() {
+        click(By.name("submit"));
+    }
 
-	public void fillGroupForm(GroupData groupData) {
-		type(By.name("group_name"), groupData.getName());
-		type(By.name("group_header"), groupData.getHeader());
-		type(By.name("group_footer"), groupData.getFooter());
-	}
+    private void click(By locator) {
+        wd.findElement(locator).click();
+    }
 
-	private void type(By locator, String text) {
-		click(locator);
-		wd.findElement(locator).clear();
-		wd.findElement(locator).sendKeys(text);
-	}
+    public void fillGroupForm(GroupData groupData) {
+        type(By.name("group_name"), groupData.getName());
+        type(By.name("group_header"), groupData.getHeader());
+        type(By.name("group_footer"), groupData.getFooter());
+    }
 
-	public void initGroupCreation() {
-		click(By.name("new"));
-	}
+    private void type(By locator, String text) {
+        click(locator);
+        wd.findElement(locator).clear();
+        wd.findElement(locator).sendKeys(text);
+    }
 
-	public void deleteSelectedGroups() {
-		click(By.name("delete"));
-	}
+    public void initGroupCreation() {
+        click(By.name("new"));
+    }
 
-	public void selectGroup() {
-		click(By.name("selected[]"));
-	}
+    public void deleteSelectedGroups() {
+        click(By.name("delete"));
+    }
+
+    public void selectGroup() {
+        click(By.name("selected[]"));
+    }
 
 }
