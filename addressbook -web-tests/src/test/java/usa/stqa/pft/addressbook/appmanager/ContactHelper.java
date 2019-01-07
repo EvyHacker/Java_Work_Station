@@ -5,19 +5,15 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import usa.stqa.pft.addressbook.model.GroupContactData;
 
-public class ContactHelper {
-    private ChromeDriver wd;
+public class ContactHelper extends HelperBase{
+
 
     public ContactHelper(ChromeDriver wd) {
-        this.wd = wd;
+        super(wd);
     }
 
     public void submitContactCreation() {
         click(By.xpath("(//input[@name='submit'])[2]"));
-    }
-
-    private void click(By locator) {
-        wd.findElement(locator).click();
     }
 
     public void fillFormContact(GroupContactData parameterObject) {
@@ -25,12 +21,6 @@ public class ContactHelper {
         type(By.name("lastname"), parameterObject.getLastName());
         type(By.name("mobile"), parameterObject.getPhoneNumber());
         type(By.name("email"), parameterObject.getEmailAddress());
-    }
-
-    private void type(By locator, String text) {
-        wd.findElement(locator).click();
-        wd.findElement(locator).clear();
-        wd.findElement(locator).sendKeys(text);
     }
 
     public void addNewContact() {
