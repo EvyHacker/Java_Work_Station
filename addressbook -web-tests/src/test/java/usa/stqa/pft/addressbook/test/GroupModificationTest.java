@@ -2,7 +2,7 @@ package usa.stqa.pft.addressbook.test;
 
 import org.testng.annotations.Test;
 import usa.stqa.pft.addressbook.model.GroupData;
-import usa.stqa.pft.addressbook.appmanager.GroupHelper;
+
 
 public class GroupModificationTest extends TestBase {
 
