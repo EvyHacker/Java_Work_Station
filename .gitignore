@@ -15,3 +15,9 @@ gradle-app.setting
 addressbook -web-tests/.DS_Store
 addressbook -web-tests/test-output/failed.png
 addressbook -web-tests/test-output/index.html
+addressbook -web-tests/build/classes/java/main/HelloWorld.class
+*.MF
+*.png
+*.xml
+*.html
+*.iml
