@@ -10,7 +10,7 @@ public class GroupDeletionTests extends TestBase {
         app.getGroupHelper().selectGroup();
         Thread.sleep(3000);
         app.getGroupHelper().deleteSelectedGroups();
-        app.getGroupHelper().returnToGroupPage();
+        app.getNavigationHelper().returnToGroupPage();
     }
 
 }

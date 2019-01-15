@@ -11,10 +11,6 @@ public class GroupHelper extends HelperBase{
        super(wd);
     }
 
-    public void returnToGroupPage() {
-        wd.findElement(By.linkText("Logout")).click();
-    }
-
     public void submitGroupCreation() {
         click(By.name("submit"));
     }
