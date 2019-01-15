@@ -1,12 +1,13 @@
 package usa.stqa.pft.addressbook.appmanager;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.WebDriver;
+
 
 public class SessionHelper extends HelperBase{
-    private ChromeDriver wd;
+    private WebDriver wd;
 
-    public SessionHelper(ChromeDriver wd) {
+    public SessionHelper(WebDriver wd) {
         super(wd);
     }
 
@@ -14,7 +15,8 @@ public class SessionHelper extends HelperBase{
         type(By.name("user"),username);
         type(By.name("pass"),password);
         click(
-                By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Password:'])[1]/following::input[2]"))
-                ;
+                By.xpath("//input[3]"));
     }
 }
+//*[@id="LoginForm"]/input[3]
+//input[name='login'][type='submit']
