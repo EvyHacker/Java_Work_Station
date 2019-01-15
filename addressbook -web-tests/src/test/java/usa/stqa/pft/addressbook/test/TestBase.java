@@ -7,7 +7,7 @@ import org.testng.annotations.BeforeMethod;
 import usa.stqa.pft.addressbook.appmanager.ApplicationManager;
 
 public class TestBase {
-    protected final ApplicationManager app = new ApplicationManager(BrowserType.CHROME);
+    protected final ApplicationManager app = new ApplicationManager(BrowserType.SAFARI);
 
     @BeforeMethod
     public void setUp() throws Exception {

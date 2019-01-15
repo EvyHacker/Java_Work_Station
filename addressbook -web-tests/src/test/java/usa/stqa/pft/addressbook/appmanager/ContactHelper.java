@@ -1,6 +1,5 @@
 package usa.stqa.pft.addressbook.appmanager;
 
-//import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
@@ -9,14 +8,15 @@ import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import usa.stqa.pft.addressbook.model.ContactData;
 
-import java.text.MessageFormat;
-
-import static org.testng.Assert.assertTrue;
-
 public class ContactHelper extends HelperBase {
 
+<<<<<<< HEAD
 	static int Message;
     public ContactHelper(WebDriver wd) {
+=======
+
+    public ContactHelper(ChromeDriver wd) {
+>>>>>>> parent of bf0029c... Homework #6 added the message
         super(wd);
     }
 
@@ -60,12 +60,5 @@ public class ContactHelper extends HelperBase {
 
     public void submitContactModification() {
         click(By.name("update"));
-    }
-    public void getMessage() throws InterruptedException {
-    	String Message = wd.findElement(By.xpath("//div[@class='msgbox']")).getText();
-    	Thread.sleep(3000);
-    	assertTrue(Message.contains("Record successful deleted"));
-    	System.out.println(MessageFormat.format("Congrats {0}", Message));
-
     }
 }

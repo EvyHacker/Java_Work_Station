@@ -9,6 +9,9 @@ public class GroupModificationTest extends TestBase {
     @Test
     public void testGroupModification() throws InterruptedException {
         app.getNavigationHelper().gotoGroupPage();
+        if (! app.getGroupHelper().isThereAGroup()){
+            app.getGroupHelper().createGroup(new GroupData("test1", null, null));
+        }
         app.getGroupHelper().selectGroup();
         Thread.sleep(3000);
         app.getGroupHelper().initGroupModification();
@@ -16,7 +19,7 @@ public class GroupModificationTest extends TestBase {
         app.getGroupHelper().fillGroupForm(new GroupData("test4", "test5", "test6"));
         Thread.sleep(3000);
         app.getGroupHelper().submitGroupModification();
-        app.getNavigationHelper().returnToGroupPage();
+        app.getGroupHelper().returnToGroupPage();
 
     }
 }
