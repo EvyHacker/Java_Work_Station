@@ -21,3 +21,4 @@ addressbook -web-tests/build/classes/java/main/HelloWorld.class
 *.xml
 *.html
 *.iml
+addressbook -web-tests/src/test/java/usa/stqa/pft/addressbook/.DS_Store

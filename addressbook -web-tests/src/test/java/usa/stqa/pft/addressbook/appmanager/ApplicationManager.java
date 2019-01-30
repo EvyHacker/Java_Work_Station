@@ -26,9 +26,9 @@ public class ApplicationManager {
     }
 
     private GroupHelper groupHelper ;
-    
+
     public GroupHelper getGroupHelper() {
-    	return groupHelper;
+        return groupHelper;
     }
 
     private NavigationHelper navigationHelper;
