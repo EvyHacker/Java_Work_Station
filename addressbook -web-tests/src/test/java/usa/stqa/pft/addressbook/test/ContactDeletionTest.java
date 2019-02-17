@@ -1,13 +1,13 @@
 package usa.stqa.pft.addressbook.test;
 
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 import usa.stqa.pft.addressbook.model.ContactData;
 
+public class ContactDeletionTest extends TestBase{
 
-public class ContactModificationTest extends TestBase {
 
 	@Test
-	public void testContactModification() {
+	public void testContactDeletion() {
 		app.getNavigationHelper().goToContactPage();
 		if (! app.getContactHelper().isThereAContact()) {//Добавлена проверка и обеспечение предусловий выполнения GroupModificationTests и GroupDeletionTest
 			app.getContactHelper().createContact(new ContactData("Evy", "Klimovich",
@@ -15,12 +15,10 @@ public class ContactModificationTest extends TestBase {
 					true);
 		}
 		app.getContactHelper().selectContact();
-		app.getContactHelper().initContactModification();
-		app.getContactHelper()
-				.fillFormContact(new ContactData("Ievgeniia", "Gaidarenko",
-						"571-241-6524", "gaidarenko1241@gmail.com", "[none]"),
-						false);
-		app.getContactHelper().submitContactModification();
+		app.getContactHelper().deleteSelectedContact();
+		app.getContactHelper().messageCompleteDeletionContacts();
 		app.getNavigationHelper().goToContactPage();
+
 	}
+
 }

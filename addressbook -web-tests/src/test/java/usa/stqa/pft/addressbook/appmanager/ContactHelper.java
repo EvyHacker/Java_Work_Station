@@ -18,6 +18,18 @@ public class ContactHelper extends HelperBase {
 		click(By.xpath("(//input[@name='submit'])[2]"));
 	}
 
+	public void createContact(ContactData contactData, boolean creation) {
+		addNewContact();
+		fillFormContact(contactData, creation);
+		submitContactCreation();
+		goToContactPage();
+
+	}
+
+	private void goToContactPage() {
+		wd.findElement(By.linkText("home page")).click();
+	}
+
 	public void fillFormContact(ContactData parameterObject, boolean creation) {
 		type(By.name("firstname"), parameterObject.getFirstName());
 		type(By.name("lastname"), parameterObject.getLastName());
@@ -31,6 +43,7 @@ public class ContactHelper extends HelperBase {
 			Assert.assertFalse(isElementPresent(By.name("new_group")));
 		}
 
+
 	}
 
 	public void addNewContact() {
@@ -41,6 +54,9 @@ public class ContactHelper extends HelperBase {
 		click(By.xpath("//*[@id=\"content\"]/form[2]/div[2]/input"));
 		wd.switchTo().alert().accept();
 
+	}
+	public void messageCompleteDeletionContacts() {
+		wd.findElement(By.xpath("//*[contains(text(), 'Record successful deleted')]"));
 	}
 
 	public void selectContact() {
@@ -55,5 +71,9 @@ public class ContactHelper extends HelperBase {
 
 	public void submitContactModification() {
 		click(By.name("update"));
+	}
+
+	public boolean isThereAContact() {
+		return isElementPresent(By.name("selected[]"));
 	}
 }

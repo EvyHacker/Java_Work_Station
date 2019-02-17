@@ -18,7 +18,7 @@ public class NavigationHelper extends HelperBase{
                 && isElementPresent(By.name("new"))){
             return;
         }
-        click(By.linkText("пroups"));
+        click(By.linkText("groups"));
     }
 
     public void returnToGroupPage() {
@@ -27,4 +27,9 @@ public class NavigationHelper extends HelperBase{
         }
         click(By.linkText("logout"));
     }
+    public void goToContactPage() {
+        click(By.linkText("home"));
+    }
+
 }
+

@@ -36,9 +36,9 @@ public class ApplicationManager {
 		return navigationHelper;
 	}
 
-	private NavigationContactHelper navigationContactHelper;
+	private NavigationHelper navigationContactHelper;
 
-	public NavigationContactHelper getNavigationContactHelper() {
+	public NavigationHelper getNavigationContactHelper() {
 		return navigationContactHelper;
 	}
 
@@ -70,7 +70,7 @@ public class ApplicationManager {
 		wd.get("http://localhost/addressbook/edit.php");
 		contactHelper = new ContactHelper(wd);
 		groupHelper = new GroupHelper(wd);
-		navigationContactHelper = new NavigationContactHelper(wd);
+		navigationContactHelper = new NavigationHelper(wd);
 		navigationHelper = new NavigationHelper(wd);
 		sessionHelper = new SessionHelper(wd);
 		sessionHelper.login("admin", "secret");

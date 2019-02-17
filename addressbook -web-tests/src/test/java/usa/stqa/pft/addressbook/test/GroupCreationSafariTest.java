@@ -29,9 +29,7 @@ public class GroupCreationSafariTest {
     driver.findElement(By.name("pass")).click();
     driver.findElement(By.name("pass")).clear();
     driver.findElement(By.name("pass")).sendKeys("secret");
-    Thread.sleep(3000);
     driver.findElement(By.xpath("//*[@id=\"LoginForm\"]/input[3]")).click();
-    Thread.sleep(3000);
     driver.findElement(By.xpath("//*[@id=\"nav\"]/ul/li[3]/a")).click(); //go to group page
     driver.findElement(By.name("new")).click(); // add new group button
     Thread.sleep(3000);

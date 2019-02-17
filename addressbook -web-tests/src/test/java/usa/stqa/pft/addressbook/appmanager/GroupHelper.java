@@ -37,7 +37,7 @@ public class GroupHelper extends HelperBase {
 		click(By.name("edit"));
 	}
 	public void returnToGroupPage() {
-		click(By.name("logout"));
+		click(By.linkText("group page"));
 	}
 
 	public void submitGroupModification() {
