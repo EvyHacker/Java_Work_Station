@@ -1,6 +1,6 @@
 package usa.stqa.pft.addressbook.appmanager;
 
-import org.openqa.selenium.NoAlertPresentException;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -12,8 +12,11 @@ import java.util.concurrent.TimeUnit;
 public class ApplicationManager {
 	WebDriver wd;
 
-	private ContactHelper contactHelper;
 	private String browser;
+	private ContactHelper contactHelper;
+	private GroupHelper groupHelper;
+	private NavigationHelper navigationHelper;
+	private SessionHelper sessionHelper;
 
 	public ApplicationManager(String browser) {
 
@@ -24,33 +27,12 @@ public class ApplicationManager {
 		return contactHelper;
 	}
 
-	private GroupHelper groupHelper;
-
 	public GroupHelper getGroupHelper() {
 		return groupHelper;
 	}
 
-	private NavigationHelper navigationHelper;
-
 	public NavigationHelper getNavigationHelper() {
 		return navigationHelper;
-	}
-
-	private NavigationHelper navigationContactHelper;
-
-	public NavigationHelper getNavigationContactHelper() {
-		return navigationContactHelper;
-	}
-
-	private SessionHelper sessionHelper;
-
-	public static boolean isAlertPresent(WebDriver wd) {
-		try {
-			wd.switchTo().alert();
-			return true;
-		} catch (NoAlertPresentException e) {
-			return false;
-		}
 	}
 
 	public void init() {
@@ -70,7 +52,6 @@ public class ApplicationManager {
 		wd.get("http://localhost/addressbook/edit.php");
 		contactHelper = new ContactHelper(wd);
 		groupHelper = new GroupHelper(wd);
-		navigationContactHelper = new NavigationHelper(wd);
 		navigationHelper = new NavigationHelper(wd);
 		sessionHelper = new SessionHelper(wd);
 		sessionHelper.login("admin", "secret");

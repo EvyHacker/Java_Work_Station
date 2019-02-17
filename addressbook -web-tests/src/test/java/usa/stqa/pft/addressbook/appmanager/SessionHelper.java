@@ -18,5 +18,4 @@ public class SessionHelper extends HelperBase{
                 By.cssSelector("input[type=\"submit\"]"));
     }
 }
-//*[@id="LoginForm"]/input[3]
-//input[name='login'][type='submit']
+
