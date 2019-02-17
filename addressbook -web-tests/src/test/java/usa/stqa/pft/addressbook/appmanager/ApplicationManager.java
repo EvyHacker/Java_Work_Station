@@ -7,78 +7,77 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.BrowserType;
 import org.openqa.selenium.safari.SafariDriver;
 
-
 import java.util.concurrent.TimeUnit;
 
 public class ApplicationManager {
-    WebDriver wd;
+	WebDriver wd;
 
-    private ContactHelper contactHelper;
-    private String browser;
+	private ContactHelper contactHelper;
+	private String browser;
 
-    public ApplicationManager(String browser) {
+	public ApplicationManager(String browser) {
 
-        this.browser = browser;
-    }
+		this.browser = browser;
+	}
 
-    public ContactHelper getContactHelper() {
-        return contactHelper;
-    }
+	public ContactHelper getContactHelper() {
+		return contactHelper;
+	}
 
-    private GroupHelper groupHelper ;
+	private GroupHelper groupHelper;
 
-    public GroupHelper getGroupHelper() {
-        return groupHelper;
-    }
+	public GroupHelper getGroupHelper() {
+		return groupHelper;
+	}
 
-    private NavigationHelper navigationHelper;
+	private NavigationHelper navigationHelper;
 
-    public NavigationHelper getNavigationHelper() {
-        return navigationHelper;
-    }
+	public NavigationHelper getNavigationHelper() {
+		return navigationHelper;
+	}
 
-    private NavigationContactHelper navigationContactHelper;
+	private NavigationContactHelper navigationContactHelper;
 
-    public NavigationContactHelper getNavigationContactHelper() {
-        return navigationContactHelper;
-    }
+	public NavigationContactHelper getNavigationContactHelper() {
+		return navigationContactHelper;
+	}
 
-    private SessionHelper sessionHelper;
+	private SessionHelper sessionHelper;
 
-    public static boolean isAlertPresent(WebDriver wd) {
-        try {
-            wd.switchTo().alert();
-            return true;
-        } catch (NoAlertPresentException e) {
-            return false;
-        }
-    }
+	public static boolean isAlertPresent(WebDriver wd) {
+		try {
+			wd.switchTo().alert();
+			return true;
+		} catch (NoAlertPresentException e) {
+			return false;
+		}
+	}
 
-    public void init() {
-        System.setProperty("webdriver.chrome.driver", "/Users/ievgeniiagaidarenko/JAVA/chromedriver 2");
-        System.setProperty("webdriver.gecko.driver", "/Users/ievgeniiagaidarenko/JAVA/geckodriver ");
-        if (browser.equals(BrowserType.CHROME)){
-            wd = new ChromeDriver();
-        }else if (browser.equals(BrowserType.FIREFOX)){
-            wd = new FirefoxDriver();
-        } else if (browser.equals(BrowserType.SAFARI)){
-            wd = new SafariDriver();
-        }
+	public void init() {
+		System.setProperty("webdriver.chrome.driver",
+				"/Users/ievgeniiagaidarenko/JAVA/chromedriver 2");
+		System.setProperty("webdriver.gecko.driver",
+				"/Users/ievgeniiagaidarenko/JAVA/geckodriver ");
+		if (browser.equals(BrowserType.CHROME)) {
+			wd = new ChromeDriver();
+		} else if (browser.equals(BrowserType.FIREFOX)) {
+			wd = new FirefoxDriver();
+		} else if (browser.equals(BrowserType.SAFARI)) {
+			wd = new SafariDriver();
+		}
 
+		wd.manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS);
+		wd.get("http://localhost/addressbook/edit.php");
+		contactHelper = new ContactHelper(wd);
+		groupHelper = new GroupHelper(wd);
+		navigationContactHelper = new NavigationContactHelper(wd);
+		navigationHelper = new NavigationHelper(wd);
+		sessionHelper = new SessionHelper(wd);
+		sessionHelper.login("admin", "secret");
+	}
 
-
-        wd.manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS);
-        wd.get("http://localhost/addressbook/edit.php");
-        contactHelper = new ContactHelper(wd);
-        groupHelper = new GroupHelper(wd);
-        navigationContactHelper = new NavigationContactHelper(wd);
-        navigationHelper = new NavigationHelper(wd);
-        sessionHelper = new SessionHelper(wd);
-        sessionHelper.login("admin", "secret");
-    }
-
-    public void stop() {
-        wd.quit();
-    }
+	public void stop() {
+		wd.quit();
+	}
 
 }
