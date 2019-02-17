@@ -29,3 +29,4 @@ addressbook -web-tests/src/test/java/usa/stqa/pft/addressbook/.DS_Store
 *.class
 *.class
 *.class
+*.kotlin_module
