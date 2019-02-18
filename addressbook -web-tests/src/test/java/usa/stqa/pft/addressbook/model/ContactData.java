@@ -22,6 +22,14 @@ public class ContactData {
         this.emailAddress = emailAddress;
         this.group = group;
     }
+    public ContactData(String firstName, String lastName, String phoneNumber, String emailAddress, String group) {
+        this.id = null;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.phoneNumber = phoneNumber;
+        this.emailAddress = emailAddress;
+        this.group = group;
+    }
 
     @Override
     public boolean equals(Object o) {
@@ -50,13 +58,7 @@ public class ContactData {
                 '}';
     }
 
-    public ContactData(String firstName, String lastName, String phoneNumber, String emailAddress, String group) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.phoneNumber = phoneNumber;
-        this.emailAddress = emailAddress;
-        this.group = group;
-    }
+
 
     public String getFirstName() {
         return firstName;
