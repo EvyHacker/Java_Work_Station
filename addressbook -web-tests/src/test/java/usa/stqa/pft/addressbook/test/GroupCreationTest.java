@@ -16,7 +16,7 @@ public class GroupCreationTest extends TestBase {
         app.goTo().groupPage();
         List<GroupData> before = app.group().list();
         //int before = app.group().getGroupCount();
-        GroupData group= new GroupData("test2", null, null);
+        GroupData group= new GroupData().withName("test2");
         app.group().create(group);
         // int after = app.group().getGroupCount();
         //Assert.assertEquals(after, before + 1);
