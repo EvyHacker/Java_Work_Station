@@ -11,25 +11,22 @@ public class GroupModificationTest extends TestBase {
 
 	@BeforeMethod
 	public void ensurePreconditions() {
-		app.getNavigationHelper().gotoGroupPage();
-		if (!app.getGroupHelper().isThereAGroup()) {
-			app.getGroupHelper()
-					.createGroup(new GroupData("test1", null, null));
-
+		app.goTo().groupPage();
+		if (app.group().list().size() == 0) {
+			app.group().create(new GroupData("test1", null, null));
 		}
 	}
 		@Test
 		public void testGroupModification() {
-			List<GroupData> before = app.getGroupHelper().getGroupList();
-			//int before = app.getGroupHelper().getGroupCount();
+			List<GroupData> before = app.group().list();
+			//int before = app.group().getGroupCount();
 			int index = before.size() - 1;
 			GroupData group = new GroupData(before.get(index).getId(), "test4", "test5", "test6");
-			app.getGroupHelper().modifyGroup(index, group);
-			List<GroupData> after = app.getGroupHelper().getGroupList();
+			app.group().modify(index, group);
+			List<GroupData> after = app.group().list();
 			Assert.assertEquals(after.size(), before.size());
-//		int after = app.getGroupHelper().getGroupCount();
+//		int after = app.group().getGroupCount();
 //		Assert.assertEquals(after, before);
-
 
 			before.remove(index);
 			before.add(group);
@@ -37,7 +34,5 @@ public class GroupModificationTest extends TestBase {
 			before.sort(byId);
 			after.sort(byId);
 			Assert.assertEquals(before, after);
-
 		}
-
 }
