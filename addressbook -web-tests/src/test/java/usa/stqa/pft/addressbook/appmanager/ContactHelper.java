@@ -2,9 +2,13 @@ package usa.stqa.pft.addressbook.appmanager;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import usa.stqa.pft.addressbook.model.ContactData;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class ContactHelper extends HelperBase {
 
@@ -42,8 +46,6 @@ public class ContactHelper extends HelperBase {
 		} else {
 			Assert.assertFalse(isElementPresent(By.name("new_group")));
 		}
-
-
 	}
 
 	public void addNewContact() {
@@ -59,12 +61,13 @@ public class ContactHelper extends HelperBase {
 		wd.findElement(By.xpath("//*[contains(text(), 'Record successful deleted')]"));
 	}
 
-	public void selectContact() {
-		click(By.name("selected[]"));
+	public void selectContact(int index) {
+		wd.findElements(By.name("selected[]")).get(index).click();
+
 
 	}
 
-	public void initContactModification() {
+	public void initContactModification(int index) {
 		click(By.xpath("//*[@id=\"maintable\"]/tbody/tr[2]/td[8]/a/img"));
 
 	}
@@ -76,4 +79,23 @@ public class ContactHelper extends HelperBase {
 	public boolean isThereAContact() {
 		return isElementPresent(By.name("selected[]"));
 	}
+
+	public int getContactCount() {
+		return wd.findElements(By.name("selected[]")).size();
+	}
+
+	public List<ContactData> getContactList() {
+		List<ContactData> contacts = new ArrayList<ContactData>();
+		List<WebElement> elements = wd.findElements(By.name("entry"));
+		for (WebElement element : elements) {
+			int id = Integer.parseInt(element.findElement(By.tagName("input")).getAttribute("value"));
+			String LastName = element.findElement(By.xpath("//*[@id=\"maintable\"]/tbody/tr[2]/td[2]")).getText();
+			String FirstName = element.findElement(By.xpath("//*[@id=\"maintable\"]/tbody/tr[2]/td[3]")).getText();
+			ContactData contact = new ContactData(id, FirstName, LastName);
+			contacts.add(contact);
+		}
+
+		return contacts;
+	}
+
 }

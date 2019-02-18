@@ -26,3 +26,7 @@ addressbook -web-tests/src/test/java/usa/stqa/pft/addressbook/.DS_Store
 *.js
 *.properties
 *.gif
+*.class
+*.class
+*.class
+*.kotlin_module
