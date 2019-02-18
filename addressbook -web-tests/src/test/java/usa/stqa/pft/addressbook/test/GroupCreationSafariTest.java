@@ -20,7 +20,7 @@ public class GroupCreationSafariTest {
   }
 
 
-  @Test
+  @Test(enabled = false)
   public void testGroupCreationSafari() throws Exception {
     driver.get("http://localhost/addressbook/group.php");
     driver.findElement(By.name("user")).click();
