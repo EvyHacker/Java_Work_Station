@@ -12,8 +12,8 @@ public class ContactDeletionTest extends TestBase{
 	public void ensurePreconditions(){
 		app.goTo().contactPage();
 		if (app.contact().list().size() == 0) {//Добавлена проверка и обеспечение предусловий выполнения GroupModificationTests и GroupDeletionTest
-			app.contact().create(new ContactData("Evy", "Klimovich",
-							"571-241-6524", "gaidarenko1241@gmail.com", "[none]"),
+			app.contact().create(new ContactData().withFirstName("Evy").withLastName("Klimovich").withPhoneNumber(
+							"571-241-6524").withEmailAddress("gaidarenko1241@gmail.com").withGroup("[none]"),
 					true);
 		}
 	}

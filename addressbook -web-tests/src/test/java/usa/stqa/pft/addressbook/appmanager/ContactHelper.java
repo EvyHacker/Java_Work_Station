@@ -45,7 +45,7 @@ public class ContactHelper extends HelperBase {
 	}
 
 	private void goToContactPage() {
-		wd.findElement(By.linkText("home page")).click();
+		wd.findElement(By.xpath("//*[@id=\"nav\"]/ul/li[1]/a")).click();
 	}
 
 	public void fillFormContact(ContactData parameterObject, boolean creation) {
@@ -105,8 +105,7 @@ public class ContactHelper extends HelperBase {
 			int id = Integer.parseInt(element.findElement(By.tagName("input")).getAttribute("value"));
 			String LastName = element.findElement(By.xpath("//*[@id=\"maintable\"]/tbody/tr[2]/td[2]")).getText();
 			String FirstName = element.findElement(By.xpath("//*[@id=\"maintable\"]/tbody/tr[2]/td[3]")).getText();
-			ContactData contact = new ContactData(id, FirstName, LastName);
-			contacts.add(contact);
+			contacts.add(new ContactData().withId(id).withFirstName(FirstName).withLastName(LastName));
 		}
 
 		return contacts;

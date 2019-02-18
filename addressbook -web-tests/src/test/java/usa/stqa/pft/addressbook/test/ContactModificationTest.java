@@ -15,8 +15,8 @@ public class ContactModificationTest extends TestBase {
 			public void ensurePreconditions(){
 			app.goTo().contactPage();
 		if (app.contact().list().size() == 0) {//Добавлена проверка и обеспечение предусловий выполнения GroupModificationTests и GroupDeletionTest
-			app.contact().create(new ContactData("Evy", "Klimovich",
-							"571-241-6524", "gaidarenko1241@gmail.com", "[none]"),
+			app.contact().create(new ContactData().withFirstName("Evy").withLastName("Klimovich").withPhoneNumber(
+							"571-241-6524").withEmailAddress("gaidarenko1241@gmail.com").withGroup("[none]"),
 					true);
 		}
 	}
@@ -25,8 +25,8 @@ public class ContactModificationTest extends TestBase {
 		//int before = app.contact().getContactCount();
 		List<ContactData> before = app.contact().list();
 		int index = before.size() - 1;
-		ContactData contact = new ContactData("Ievgeniia", "Gaidarenko",
-				"571-241-6524", "gaidarenko1241@gmail.com", "[none]");
+		ContactData contact = new ContactData().withFirstName("Ievgeniia").withLastName("Gaidarenko").withPhoneNumber(
+				"571-241-6524").withEmailAddress("gaidarenko1241@gmail.com").withGroup("[none]");
 		app.contact().modify(index, contact);
 //		int after = app.contact().getContactCount();
 //		Assert.assertEquals(after, before);

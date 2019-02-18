@@ -3,7 +3,7 @@ package usa.stqa.pft.addressbook.model;
 import java.util.Objects;
 
 public class ContactData {
-    private int id;
+    private int id  = Integer.MAX_VALUE;
     private String firstName;
     private String lastName;
     private String phoneNumber;
@@ -12,6 +12,34 @@ public class ContactData {
 
     public int getId() {
         return id;
+    }
+    public ContactData withId(int id) { this.id = id;
+        return this;
+    }
+
+    public ContactData withFirstName(String firstName) {
+        this.firstName = firstName;
+        return this;
+    }
+
+    public ContactData withLastName(String lastName) {
+        this.lastName = lastName;
+        return this;
+    }
+
+    public ContactData withPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+        return this;
+    }
+
+    public ContactData withEmailAddress(String emailAddress) {
+        this.emailAddress = emailAddress;
+        return this;
+    }
+
+    public ContactData withGroup(String group) {
+        this.group = group;
+        return this;
     }
 
     @Override
@@ -36,23 +64,23 @@ public class ContactData {
         return Objects.hash(firstName, lastName);
     }
 
-    public ContactData(int id, String firstName, String lastName) {
-        this.id = id;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.phoneNumber = null;
-        this.emailAddress = null;
-        this.group = null;
-    }
-    public ContactData(String firstName, String lastName, String phoneNumber, String emailAddress, String group) {
-        this.id = Integer.MAX_VALUE;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.phoneNumber = phoneNumber;
-        this.emailAddress = emailAddress;
-        this.group = group;
-    }
-
+//    public ContactData(int id, String firstName, String lastName) {
+//        this.id = id;
+//        this.firstName = firstName;
+//        this.lastName = lastName;
+//        this.phoneNumber = null;
+//        this.emailAddress = null;
+//        this.group = null;
+//    }
+//    public ContactData(String firstName, String lastName, String phoneNumber, String emailAddress, String group) {
+//        this.id = Integer.MAX_VALUE;
+//        this.firstName = firstName;
+//        this.lastName = lastName;
+//        this.phoneNumber = phoneNumber;
+//        this.emailAddress = emailAddress;
+//        this.group = group;
+//    }
+//
     public String getFirstName() {
         return firstName;
     }
