@@ -6,7 +6,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import usa.stqa.pft.addressbook.model.ContactData;
-import usa.stqa.pft.addressbook.model.GroupData;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -62,7 +61,7 @@ public class ContactHelper extends HelperBase {
 		wd.findElement(By.xpath("//*[contains(text(), 'Record successful deleted')]"));
 	}
 
-	public void selectContact() {
+	public void selectContact(int index) {
 		click(By.name("selected[]"));
 
 	}
