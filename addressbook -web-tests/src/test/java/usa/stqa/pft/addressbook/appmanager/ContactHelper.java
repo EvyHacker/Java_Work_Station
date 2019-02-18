@@ -29,6 +29,13 @@ public class ContactHelper extends HelperBase {
 		goToContactPage();
 
 	}
+	public void modifyContact(int index, ContactData contact) {
+		selectContact(index);
+		initContactModification(index);
+		fillFormContact(contact, false);
+		submitContactModification();
+		goToContactPage();
+	}
 
 	private void goToContactPage() {
 		wd.findElement(By.linkText("home page")).click();
