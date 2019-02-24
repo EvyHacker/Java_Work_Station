@@ -1,6 +1,5 @@
 package usa.stqa.pft.addressbook.model;
 
-import java.util.Objects;
 
 public class ContactData {
     private int id  = Integer.MAX_VALUE;
@@ -13,6 +12,36 @@ public class ContactData {
     private String emailAddress;
     private String group;
     private String allPhones;
+    private String firstAddress;
+    private String secondAddress;
+    private String allAddresses;
+
+    public String getAllAddresses() {
+        return allAddresses;
+    }
+
+    public ContactData withAllAddresses(String allAddresses) {
+        this.allAddresses = allAddresses;
+        return this;
+    }
+
+    public String getSecondAddress() {
+        return secondAddress;
+    }
+
+    public ContactData withSecondAddress(String secondAddress) {
+        this.secondAddress = secondAddress;
+        return this;
+    }
+
+    public String getFirstAddress() {
+        return firstAddress;
+    }
+
+    public ContactData withFirstAddress(String firstAddress) {
+        this.firstAddress = firstAddress;
+        return this;
+    }
 
     public String getAllPhones(){
         return allPhones;
