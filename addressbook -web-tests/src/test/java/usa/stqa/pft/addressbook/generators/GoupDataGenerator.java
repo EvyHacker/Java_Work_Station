@@ -1,5 +1,8 @@
 package usa.stqa.pft.addressbook.generators;
 
+import com.beust.jcommander.JCommander;
+import com.beust.jcommander.Parameter;
+import com.beust.jcommander.ParameterException;
 import usa.stqa.pft.addressbook.model.GroupData;
 
 import java.io.File;
@@ -11,13 +14,31 @@ import java.util.List;
 
 public class GoupDataGenerator {
 
-    public static void main (String [] args) throws IOException {
-        int count = Integer.parseInt(args[0]);
-        File file = new File(args[1]);
+    @Parameter (names = "-c", description = "Group count")
+    public int count;
 
-        List<GroupData> groups = generateGroups(count);
-        save(groups, file);
+    @Parameter (names = "-f", description = "Target file")
+    public String file;
+
+    public static void main(String[] args) throws IOException {
+        GoupDataGenerator generator = new GoupDataGenerator();
+//        int count = Integer.parseInt(args[0]);
+//        File file = new File(args[1]);
+        JCommander jCommander = new JCommander(generator);
+        try {
+            jCommander.parse(args);
+        }catch(ParameterException ex){
+             jCommander.usage();
+             return;
+            }
+        generator.run();
     }
+
+    private void run() throws IOException {
+            List<GroupData> groups = generateGroups(count);
+            save(groups, new File(String.valueOf(file)));
+        }
+
 
     private static void save(List<GroupData> groups, File file) throws IOException {
         System.out.println(new File (".").getAbsolutePath());
