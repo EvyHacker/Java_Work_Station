@@ -1,7 +1,6 @@
 package usa.stqa.pft.addressbook.generators;
 
 import usa.stqa.pft.addressbook.model.GroupData;
-import usa.stqa.pft.addressbook.model.Groups;
 
 import java.io.File;
 import java.io.FileWriter;
