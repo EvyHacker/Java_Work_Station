@@ -27,7 +27,7 @@ public class NavigationHelper extends HelperBase{
         }
         click(By.linkText("logout"));
     }
-    public void contactPage() {
+    public void goToContactPage() {
         click(By.linkText("home"));
     }
 
