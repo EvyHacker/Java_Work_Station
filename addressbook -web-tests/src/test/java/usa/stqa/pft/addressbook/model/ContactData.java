@@ -10,49 +10,18 @@ public class ContactData {
     private String mobilePhone;
     private String workPhone;
     private String emailAddress;
+    private String emailAddress2;
+    private String emailAddress3;
+    private String allEmails;
     private String group;
     private String allPhones;
     private String firstAddress;
     private String secondAddress;
     private String allAddresses;
 
-    public String getAllAddresses() {
-        return allAddresses;
-    }
 
-    public ContactData withAllAddresses(String allAddresses) {
-        this.allAddresses = allAddresses;
-        return this;
-    }
+    public int getId() { return id; }
 
-    public String getSecondAddress() {
-        return secondAddress;
-    }
-
-    public ContactData withSecondAddress(String secondAddress) {
-        this.secondAddress = secondAddress;
-        return this;
-    }
-
-    public String getFirstAddress() {
-        return firstAddress;
-    }
-
-    public ContactData withFirstAddress(String firstAddress) {
-        this.firstAddress = firstAddress;
-        return this;
-    }
-
-    public String getAllPhones(){
-        return allPhones;
-    }
-    public ContactData withAllPhones(String allPhones) {
-        this.allPhones = allPhones;
-        return this;
-    }
-    public int getId() {
-        return id;
-    }
     public ContactData withId(int id) { this.id = id;
         return this;
     }
@@ -74,6 +43,52 @@ public class ContactData {
 
     public ContactData withEmailAddress(String emailAddress) {
         this.emailAddress = emailAddress;
+        return this;
+    }
+    public String getEmailAddress3() { return emailAddress3; }
+
+    public ContactData withEmailAddress3(String emailAddress3) {
+        this.emailAddress3 = emailAddress3;
+        return this;
+    }
+
+    public String getEmailAddress2() { return emailAddress2; }
+
+    public ContactData withEmailAddress2(String emailAddress2) {
+        this.emailAddress2 = emailAddress2;
+        return this;
+    }
+    public String getAllEmails() { return allEmails; }
+
+    public ContactData withAllEmails(String allEmails) {
+        this.allEmails = allEmails;
+        return this;
+    }
+
+    public String getFirstAddress() { return firstAddress; }
+
+    public ContactData withFirstAddress(String firstAddress) {
+        this.firstAddress = firstAddress;
+        return this;
+    }
+    public String getSecondAddress() { return secondAddress; }
+
+    public ContactData withAllAddresses(String allAddresses) {
+        this.allAddresses = allAddresses;
+        return this;
+    }
+
+    public String getAllAddresses() { return allAddresses; }
+
+    public ContactData withSecondAddress(String secondAddress) {
+        this.secondAddress = secondAddress;
+        return this;
+    }
+
+    public String getAllPhones(){ return allPhones; }
+
+    public ContactData withAllPhones(String allPhones) {
+        this.allPhones = allPhones;
         return this;
     }
 
