@@ -36,7 +36,7 @@ public class GoupDataGenerator {
 
     private void run() throws IOException {
             List<GroupData> groups = generateGroups(count);
-            save(groups, new File(String.valueOf(file)));
+            save(groups, new File(file));
         }
 
 
