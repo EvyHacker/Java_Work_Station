@@ -70,7 +70,7 @@ public class GroupCreationTest extends TestBase {
                     (before.withAdded(group.withId(after.stream().mapToInt((g) -> g.getId()).max().getAsInt()))));
         }
 
-    @Test
+    @Test(enabled = false)
     public void testBadGroupCreation() {
         app.goTo().groupPage();
         Groups before = app.group().all();

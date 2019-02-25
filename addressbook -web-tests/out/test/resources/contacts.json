@@ -1,5 +1,17 @@
 [
-  {},
-  {},
-  {  }
+  {
+    "firstName": "Evy 0",
+    "lastName": "Gaidarenko 0",
+    "emailAddress": "evy@gsa.gov 0"
+  },
+  {
+    "firstName": "Evy 1",
+    "lastName": "Gaidarenko 1",
+    "emailAddress": "evy@gsa.gov 1"
+  },
+  {
+    "firstName": "Evy 2",
+    "lastName": "Gaidarenko 2",
+    "emailAddress": "evy@gsa.gov 2"
+  }
 ]

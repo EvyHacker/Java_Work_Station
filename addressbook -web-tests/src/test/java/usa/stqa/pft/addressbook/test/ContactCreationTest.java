@@ -1,5 +1,7 @@
 package usa.stqa.pft.addressbook.test;
 
+import com.google.common.reflect.TypeToken;
+import com.google.gson.Gson;
 import com.thoughtworks.xstream.XStream;
 import org.testng.annotations.*;
 import usa.stqa.pft.addressbook.model.ContactData;
@@ -40,6 +42,20 @@ public class ContactCreationTest extends TestBase {
 		return contacts.stream().map((c) -> new Object[] {c}).collect(Collectors.toList()).iterator();
 	}
 
+	@DataProvider
+	public Iterator<Object[]> validContactsFromJson() throws IOException {
+		BufferedReader reader = new BufferedReader(new FileReader("src/test/resources/contacts.json"));
+		String json = "";
+		String line = reader.readLine();
+		while (line != null){
+			json += line;
+		line = reader.readLine();
+		}
+		Gson gson =new Gson();
+		List <ContactData> contacts = gson.fromJson(json, new TypeToken<List<ContactData>>(){}.getType());//<List<GroupData>.class
+		return contacts.stream().map((g) -> new Object[] {g}).collect(Collectors.toList()).iterator();
+	}
+
 //		list.add(new Object[] {new ContactData().withFirstName("Evy").withLastName("Klimovich")
 //				.withPhoneNumber("571-241-6524").withEmailAddress("evy@gmail.com")});
 //		list.add(new Object[] {new ContactData().withFirstName("Ievgeniia").withLastName("Gaidarenko")
@@ -47,7 +63,7 @@ public class ContactCreationTest extends TestBase {
 //		list.add(new Object[] {new ContactData().withFirstName("Maksim").withLastName("Pupkin")
 //				.withPhoneNumber("202-345-4545").withEmailAddress("maks@gmail.com")});
 
-	@Test(dataProvider = "validContacts")
+	@Test(dataProvider = "validContactsFromJson")
 	public void testCreationContact(ContactData contact) {
 		Contacts before = app.contact().all();
 		File photo = new File("src/test/resources/me.jpg");
