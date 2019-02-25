@@ -36,6 +36,7 @@ dependencies {
     compile 'org.seleniumhq.selenium:selenium-java:3.141.59'
     compile 'org.hamcrest:hamcrest:2.1'
     compile group: 'com.beust', name: 'jcommander', version: '1.72'
+    compile group: 'com.thoughtworks.xstream', name: 'xstream', version: '1.4.11.1'
    
 }
 
