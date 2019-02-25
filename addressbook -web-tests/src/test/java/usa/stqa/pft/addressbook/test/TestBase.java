@@ -6,7 +6,8 @@ import org.testng.annotations.BeforeSuite;
 import usa.stqa.pft.addressbook.appmanager.ApplicationManager;
 //Use Chrome or Firefox driver
 public class TestBase {
-    protected static final ApplicationManager app = new ApplicationManager(BrowserType.CHROME);
+    protected static final ApplicationManager app
+            = new ApplicationManager(System.getProperty("browser"));
 
     @BeforeSuite
     public void setUp() throws Exception {
