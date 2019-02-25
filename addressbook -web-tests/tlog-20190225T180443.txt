@@ -1,0 +1,6 @@
+2986 [main] INFO  u.s.pft.addressbook.test.TestBase - Start test testGroupCreationwith parameters [GroupData{id='2147483647', name='test 0'}]
+45895 [main] INFO  u.s.pft.addressbook.test.TestBase - Stop test testGroupCreation
+45895 [main] INFO  u.s.pft.addressbook.test.TestBase - Start test testGroupCreationwith parameters [GroupData{id='2147483647', name='test 1'}]
+87529 [main] INFO  u.s.pft.addressbook.test.TestBase - Stop test testGroupCreation
+87529 [main] INFO  u.s.pft.addressbook.test.TestBase - Start test testGroupCreationwith parameters [GroupData{id='2147483647', name='test 2'}]
+128647 [main] INFO  u.s.pft.addressbook.test.TestBase - Stop test testGroupCreation

@@ -1,0 +1,4 @@
+3030 [main] INFO  u.s.pft.addressbook.test.TestBase - Start test testCreationContactwith parameters [ContactData{id=2147483647, firstName='Evy 0', lastName='Gaidarenko 0'}]
+49747 [main] INFO  u.s.pft.addressbook.test.TestBase - Stop test testCreationContact
+49747 [main] INFO  u.s.pft.addressbook.test.TestBase - Start test testCreationContactwith parameters [ContactData{id=2147483647, firstName='Evy 1', lastName='Gaidarenko 1'}]
+55610 [main] INFO  u.s.pft.addressbook.test.TestBase - Stop test testCreationContact
