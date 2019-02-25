@@ -50,9 +50,9 @@ import java.util.List;
         private static List<ContactData> generateContacts(int count) {
             List<ContactData> contacts = new ArrayList<ContactData>();
             for (int i=0; i<count; i++){
-                contacts.add(new ContactData().withFirstName(String.format("name %s", i))
-                        .withLastName(String.format("lastName %s", i)).withEmailAddress(String.format("email %s", i))
-                .withMobilePhone(String.format("mobilePhone %s", i)));
+                contacts.add(new ContactData().withFirstName(String.format("Evy %s", i))
+                        .withLastName(String.format("Gaidarenko %s", i)).withEmailAddress(String.format("evy@gsa.gov %s", i))
+                .withMobilePhone(String.format("202-234-2323 %s", i)));
             }
             return contacts;
         }

@@ -5,7 +5,10 @@ import usa.stqa.pft.addressbook.model.ContactData;
 import usa.stqa.pft.addressbook.model.Contacts;
 import usa.stqa.pft.addressbook.model.GroupData;
 
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -16,14 +19,23 @@ import static org.hamcrest.MatcherAssert.*;
 public class ContactCreationTest extends TestBase {
 
 	@DataProvider
-	public Iterator<Object[]> validContacts(){
+	public Iterator<Object[]> validContacts() throws IOException {
 		List<Object[]> list = new ArrayList<Object[]>();
-		list.add(new Object[] {new ContactData().withFirstName("Evy").withLastName("Klimovich")
-				.withPhoneNumber("571-241-6524").withEmailAddress("evy@gmail.com")});
-		list.add(new Object[] {new ContactData().withFirstName("Ievgeniia").withLastName("Gaidarenko")
-				.withPhoneNumber("202-234-2323").withEmailAddress("evy@gsa.gov")});
-		list.add(new Object[] {new ContactData().withFirstName("Maksim").withLastName("Pupkin")
-				.withPhoneNumber("202-345-4545").withEmailAddress("maks@gmail.com")});
+		BufferedReader reader = new BufferedReader(new FileReader("src/test/resources/contacts.scv"));
+		String line = reader.readLine();
+		while (line != null){
+			String [] split = line.split(";");
+			list.add(new Object []{new ContactData().withFirstName(split[0]).withLastName(split[1])
+			.withPhoneNumber(split[2]).withEmailAddress(split[3])});
+			line = reader.readLine();
+		}
+
+//		list.add(new Object[] {new ContactData().withFirstName("Evy").withLastName("Klimovich")
+//				.withPhoneNumber("571-241-6524").withEmailAddress("evy@gmail.com")});
+//		list.add(new Object[] {new ContactData().withFirstName("Ievgeniia").withLastName("Gaidarenko")
+//				.withPhoneNumber("202-234-2323").withEmailAddress("evy@gsa.gov")});
+//		list.add(new Object[] {new ContactData().withFirstName("Maksim").withLastName("Pupkin")
+//				.withPhoneNumber("202-345-4545").withEmailAddress("maks@gmail.com")});
 		return list.iterator();
 	}
 
