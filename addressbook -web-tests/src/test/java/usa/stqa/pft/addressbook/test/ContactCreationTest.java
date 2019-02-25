@@ -24,44 +24,34 @@ public class ContactCreationTest extends TestBase {
 
 	@DataProvider
 	public Iterator<Object[]> validContacts() throws IOException {
-//		List<Object[]> list = new ArrayList<Object[]>();
-//		BufferedReader reader = new BufferedReader(new FileReader("src/test/resources/contacts.scv"));
-		BufferedReader reader = new BufferedReader(new FileReader("src/test/resources/contacts.xml"));
-		String xml = "";
-		String line = reader.readLine();
-		while (line != null){
-			xml += line;
-//			String [] split = line.split(";");
-//			list.add(new Object []{new ContactData().withFirstName(split[0]).withLastName(split[1])
-//			.withPhoneNumber(split[2]).withEmailAddress(split[3])});
-			line = reader.readLine();
+		try (BufferedReader reader = new BufferedReader(new FileReader("src/test/resources/contacts.xml"))){
+			String xml = "";
+			String line = reader.readLine();
+			while (line != null){
+				xml += line;
+				line = reader.readLine();
+			}
+			XStream xstream = new XStream();
+			xstream.processAnnotations(ContactData.class);
+			List <ContactData> contacts =  (List <ContactData>)xstream.fromXML(xml);
+			return contacts.stream().map((c) -> new Object[] {c}).collect(Collectors.toList()).iterator();
+			}
 		}
-		XStream xstream = new XStream();
-		xstream.processAnnotations(ContactData.class);
-		List <ContactData> contacts =  (List <ContactData>)xstream.fromXML(xml);
-		return contacts.stream().map((c) -> new Object[] {c}).collect(Collectors.toList()).iterator();
-	}
 
 	@DataProvider
 	public Iterator<Object[]> validContactsFromJson() throws IOException {
-		BufferedReader reader = new BufferedReader(new FileReader("src/test/resources/contacts.json"));
-		String json = "";
-		String line = reader.readLine();
-		while (line != null){
-			json += line;
-		line = reader.readLine();
+		try (BufferedReader reader = new BufferedReader(new FileReader("src/test/resources/contacts.json"))){
+			String json = "";
+			String line = reader.readLine();
+			while (line != null){
+				json += line;
+				line = reader.readLine();
+			}
+			Gson gson =new Gson();
+			List <ContactData> contacts = gson.fromJson(json, new TypeToken<List<ContactData>>(){}.getType());//<List<GroupData>.class
+			return contacts.stream().map((g) -> new Object[] {g}).collect(Collectors.toList()).iterator();
+			}
 		}
-		Gson gson =new Gson();
-		List <ContactData> contacts = gson.fromJson(json, new TypeToken<List<ContactData>>(){}.getType());//<List<GroupData>.class
-		return contacts.stream().map((g) -> new Object[] {g}).collect(Collectors.toList()).iterator();
-	}
-
-//		list.add(new Object[] {new ContactData().withFirstName("Evy").withLastName("Klimovich")
-//				.withPhoneNumber("571-241-6524").withEmailAddress("evy@gmail.com")});
-//		list.add(new Object[] {new ContactData().withFirstName("Ievgeniia").withLastName("Gaidarenko")
-//				.withPhoneNumber("202-234-2323").withEmailAddress("evy@gsa.gov")});
-//		list.add(new Object[] {new ContactData().withFirstName("Maksim").withLastName("Pupkin")
-//				.withPhoneNumber("202-345-4545").withEmailAddress("maks@gmail.com")});
 
 	@Test(dataProvider = "validContactsFromJson")
 	public void testCreationContact(ContactData contact) {
