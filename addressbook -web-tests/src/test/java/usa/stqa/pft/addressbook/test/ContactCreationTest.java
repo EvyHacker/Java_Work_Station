@@ -1,5 +1,6 @@
 package usa.stqa.pft.addressbook.test;
 
+import com.thoughtworks.xstream.XStream;
 import org.testng.annotations.*;
 import usa.stqa.pft.addressbook.model.ContactData;
 import usa.stqa.pft.addressbook.model.Contacts;
@@ -12,6 +13,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import static org.hamcrest.CoreMatchers.*;
 import static org.hamcrest.MatcherAssert.*;
@@ -20,15 +22,23 @@ public class ContactCreationTest extends TestBase {
 
 	@DataProvider
 	public Iterator<Object[]> validContacts() throws IOException {
-		List<Object[]> list = new ArrayList<Object[]>();
-		BufferedReader reader = new BufferedReader(new FileReader("src/test/resources/contacts.scv"));
+//		List<Object[]> list = new ArrayList<Object[]>();
+//		BufferedReader reader = new BufferedReader(new FileReader("src/test/resources/contacts.scv"));
+		BufferedReader reader = new BufferedReader(new FileReader("src/test/resources/contacts.xml"));
+		String xml = "";
 		String line = reader.readLine();
 		while (line != null){
-			String [] split = line.split(";");
-			list.add(new Object []{new ContactData().withFirstName(split[0]).withLastName(split[1])
-			.withPhoneNumber(split[2]).withEmailAddress(split[3])});
+			xml += line;
+//			String [] split = line.split(";");
+//			list.add(new Object []{new ContactData().withFirstName(split[0]).withLastName(split[1])
+//			.withPhoneNumber(split[2]).withEmailAddress(split[3])});
 			line = reader.readLine();
 		}
+		XStream xstream = new XStream();
+		xstream.processAnnotations(ContactData.class);
+		List <ContactData> contacts =  (List <ContactData>)xstream.fromXML(xml);
+		return contacts.stream().map((c) -> new Object[] {c}).collect(Collectors.toList()).iterator();
+	}
 
 //		list.add(new Object[] {new ContactData().withFirstName("Evy").withLastName("Klimovich")
 //				.withPhoneNumber("571-241-6524").withEmailAddress("evy@gmail.com")});
@@ -36,8 +46,6 @@ public class ContactCreationTest extends TestBase {
 //				.withPhoneNumber("202-234-2323").withEmailAddress("evy@gsa.gov")});
 //		list.add(new Object[] {new ContactData().withFirstName("Maksim").withLastName("Pupkin")
 //				.withPhoneNumber("202-345-4545").withEmailAddress("maks@gmail.com")});
-		return list.iterator();
-	}
 
 	@Test(dataProvider = "validContacts")
 	public void testCreationContact(ContactData contact) {
