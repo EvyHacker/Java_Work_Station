@@ -1,31 +1,31 @@
 package usa.stqa.pft.addressbook.test;
 
 import org.testng.annotations.Test;
-import usa.stqa.pft.addressbook.model.GroupData;
-import usa.stqa.pft.addressbook.model.Groups;
+import usa.stqa.pft.addressbook.model.ContactData;
+import usa.stqa.pft.addressbook.model.Contacts;
 
 import java.sql.*;
 
-public class DbConnectionTest {
+public class DbConnectionContactTest {
 
     @Test
-    public void testDbConnectionGroups(){
+    public void testDbConnectionContacts(){
         Connection conn = null;
         try {
             conn =
                     DriverManager.getConnection("jdbc:mysql://localhost:3306/addressbook?user=root&password=");
             Statement st = conn.createStatement();
-            ResultSet rs = st.executeQuery("select group_id, group_name, group_header, group_footer from group_list ");
-            Groups groups = new Groups();
+            ResultSet rs = st.executeQuery("select id, firstname, lastname, email from addressbook ");
+            Contacts contacts = new Contacts();
             while (rs.next()){
-                groups.add(new GroupData().withId(rs.getInt("group_id")).withName(rs.getString("group_name"))
-                        .withHeader(rs.getString("group_header")).withFooter(rs.getString("group_footer")));
+                contacts.add(new ContactData().withId(rs.getInt("id")).withFirstName(rs.getString("firstname"))
+                        .withLastName(rs.getString("lastname")).withEmailAddress(rs.getString("email")));
             }
             rs.close();
             st.close();
             conn.close();
 
-            System.out.println(groups);
+            System.out.println(contacts);
             // Do something with the Connection
         } catch (SQLException ex) {
             // handle any errors
