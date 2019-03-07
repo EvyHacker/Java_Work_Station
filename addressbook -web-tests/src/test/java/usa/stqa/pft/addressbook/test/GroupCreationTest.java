@@ -89,5 +89,6 @@ public class GroupCreationTest extends TestBase {
         assertThat(app.group().count(), equalTo(before.size()));//Проверка на основе хеширования
         Groups after = app.db().groups();
         assertThat(after, equalTo(before));
+        verifyGroupListInUi();
     }
 }
