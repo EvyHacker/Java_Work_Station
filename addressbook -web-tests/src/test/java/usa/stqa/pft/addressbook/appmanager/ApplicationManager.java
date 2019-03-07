@@ -23,6 +23,7 @@ public class ApplicationManager {
 	private NavigationHelper navigationHelper;
 	private SessionHelper sessionHelper;
 	private final Properties properties;
+	private DbHelper dbHelper;
 
 	public ApplicationManager(String browser)  {
 
@@ -49,6 +50,8 @@ public class ApplicationManager {
 				"/Users/ievgeniiagaidarenko/JAVA/chromedriver 2");
 		System.setProperty("webdriver.gecko.driver",
 				"/Users/ievgeniiagaidarenko/JAVA/geckodriver ");
+
+		dbHelper = new DbHelper();
 		if (browser.equals(BrowserType.CHROME)) {
 			wd = new ChromeDriver();
 		} else if (browser.equals(BrowserType.FIREFOX)) {
@@ -64,6 +67,11 @@ public class ApplicationManager {
 		navigationHelper = new NavigationHelper(wd);
 		sessionHelper = new SessionHelper(wd);
 		sessionHelper.login(properties.getProperty("web.adminLogin"),properties.getProperty("web.adminPassword"));
+
+	}
+
+	public DbHelper db(){
+		return dbHelper;
 	}
 
 	public void stop() {

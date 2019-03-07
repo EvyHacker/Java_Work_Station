@@ -2,17 +2,13 @@ package usa.stqa.pft.addressbook.test;
 
 import com.google.common.reflect.TypeToken;
 import com.google.gson.Gson;
-import com.sun.javafx.scene.control.skin.VirtualFlow;
 import com.thoughtworks.xstream.XStream;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import usa.stqa.pft.addressbook.model.GroupData;
 import usa.stqa.pft.addressbook.model.Groups;
 
 import java.io.*;
-import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.stream.Collectors;
