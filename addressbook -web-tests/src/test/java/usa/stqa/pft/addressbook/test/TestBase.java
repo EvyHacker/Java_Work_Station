@@ -10,6 +10,8 @@ import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 import usa.stqa.pft.addressbook.appmanager.ApplicationManager;
+import usa.stqa.pft.addressbook.model.ContactData;
+import usa.stqa.pft.addressbook.model.Contacts;
 import usa.stqa.pft.addressbook.model.GroupData;
 import usa.stqa.pft.addressbook.model.Groups;
 
@@ -53,6 +55,15 @@ protected static final ApplicationManager app
             Groups uiGroups = app.group().all();
             assertThat(uiGroups, equalTo(dbGroups.stream().map((g) ->
                     new GroupData().withId(g.getId()).withName(g.getName())).collect(Collectors.toSet())));
+        }
+    }
+    public void verifyContactListInUi() {
+        if (Boolean.getBoolean("verifyUI")) {
+            Contacts dbContacts = app.db().contacts();
+            Contacts uiContacts = app.contact().all();
+            assertThat(uiContacts, equalTo(dbContacts.stream().map((g) ->
+                    new ContactData().withId(g.getId()).withFirstName(g.getFirstName()).withLastName(g.getLastName()))
+                    .collect(Collectors.toSet())));
         }
     }
 }
