@@ -14,7 +14,7 @@ public class ContactModificationTest extends TestBase {
 	@BeforeMethod
 			public void ensurePreconditions(){
 		if (app.db().contacts().size() == 0){
-			app.goTo().goToContactPage();
+			app.goTo().goToContactPage();//добавлено сравнение дб
 			app.contact().create(new ContactData().withFirstName("Evy").withLastName("Klimovich").withPhoneNumber(
 							"571-241-6524").withEmailAddress("gaidarenko1241@gmail.com").withGroup("[none]"),
 					true);
