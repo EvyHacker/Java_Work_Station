@@ -3,14 +3,10 @@ package usa.stqa.pft.addressbook.appmanager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.Select;
-import org.testng.Assert;
 import usa.stqa.pft.addressbook.model.ContactData;
 import usa.stqa.pft.addressbook.model.Contacts;
 
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 public class ContactHelper extends HelperBase {
 
@@ -34,7 +30,7 @@ public class ContactHelper extends HelperBase {
 	}
 	public void modify(ContactData contact) {
 		selectContactById(contact.getId());
-		initContactModification();
+		initContactModification(contact.getId());
 		fillFormContact(contact, false);
 		submitContactModification();
 		contactCache = null;
@@ -85,10 +81,10 @@ public class ContactHelper extends HelperBase {
 		wd.findElement(By.xpath("//*[contains(text(), 'Record successful deleted')]"));
 	}
 
-	public void initContactModification() {
-		click(By.xpath("//*[@id=\"maintable\"]/tbody/tr[2]/td[8]/a/img"));
-
-	}
+//	public void initContactModification() {
+//		click(By.xpath("//*[@id=\"maintable\"]/tbody/tr[2]/td[8]/a/img"));
+//
+//	}
 
 	public void submitContactModification() {
 		click(By.name("update"));
@@ -132,7 +128,7 @@ public class ContactHelper extends HelperBase {
 	}
 
 	public ContactData infoFromEditForm(ContactData contact) {
-		initContactModificationBy(contact.getId());
+		initContactModification(contact.getId());
 		String firstName = wd.findElement(By.name("firstname")).getAttribute("value");
 		String lastName = wd.findElement(By.name("lastname")).getAttribute("value");
 		String homePhone  = wd.findElement(By.name("home")).getAttribute("value");
@@ -151,7 +147,7 @@ public class ContactHelper extends HelperBase {
 
 	}
 
-	private void initContactModificationBy(int id) {
+	private void initContactModification(int id) {//ответ на зд№9
 		wd.findElement(By.xpath("//a[@href='edit.php?id=" + id +"']")).click();
 //		WebElement checkbox = wd.findElement(By.cssSelector(String.format("input[value'%s]", id)));
 //		WebElement row = checkbox.findElement(By.xpath("./../.."));
