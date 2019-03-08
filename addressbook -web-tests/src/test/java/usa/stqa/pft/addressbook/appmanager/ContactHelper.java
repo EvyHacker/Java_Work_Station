@@ -52,8 +52,19 @@ public class ContactHelper extends HelperBase {
 	private void selectContactById(int id) {
 		wd.findElement(By.name("selected[]")).click();
 	}
+	private void selectToGroup(Integer idGroup) {
+		new Select(wd.findElement(By.name("to_group"))).selectByValue(String.valueOf(idGroup));
+	}
 
-	private void goToContactPage() {
+	private void cliclToGroup() {
+		wd.findElement(By.name("add")).click();
+	}
+
+	public void messageCompleteAddedContactToGroup() {
+		wd.findElement(By.xpath("//*[contains(text(), 'Users added')]"));
+	}
+
+		private void goToContactPage() {
 		wd.findElement(By.xpath("//*[@id=\"nav\"]/ul/li[1]/a")).click();
 	}
 
@@ -79,8 +90,14 @@ public class ContactHelper extends HelperBase {
 	public void deleteSelectedContact() {
 		click(By.xpath("//*[@id=\"content\"]/form[2]/div[2]/input"));
 		wd.switchTo().alert().accept();
-
 	}
+	public void addToGroup(ContactData contact, Integer idGroup) {
+		selectContactById(contact.getId());
+		selectToGroup(idGroup);
+		cliclToGroup();
+		messageCompleteAddedContactToGroup();
+	}
+
 	public void messageCompleteDeletionContacts() {
 		wd.findElement(By.xpath("//*[contains(text(), 'Record successful deleted')]"));
 	}
