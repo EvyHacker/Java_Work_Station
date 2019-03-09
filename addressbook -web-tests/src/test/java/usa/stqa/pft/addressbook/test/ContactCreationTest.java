@@ -76,6 +76,7 @@ public class ContactCreationTest extends TestBase {
 		Contacts after = app.db().contacts();
 		assertThat(after, equalTo(
 				before.withAdded(contact.withId(after.stream().mapToInt(c -> c.getId()).max().getAsInt()))));
+		verifyContactListInUi();
 	}
 
 	@Test(enabled = false) // Определен относительный пункт к файлу фотографии, добавлен тест на пр…

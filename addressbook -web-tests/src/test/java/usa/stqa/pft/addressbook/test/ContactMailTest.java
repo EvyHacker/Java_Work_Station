@@ -15,9 +15,9 @@ public class ContactMailTest extends TestBase {
         if (app.contact().all().size() == 0) {//Добавлена проверка и обеспечение предусловий выполнения GroupModificationTests и GroupDeletionTest
             app.contact().create(new ContactData().withFirstName("Evy").withLastName("Klimovich")
                             .withAllAddresses("1575 Anderson Rd, Apt1214, Mclean, VA, 22102")
-                            .withPhoneNumber("571-241-6524").withEmailAddress("gaidarenko1241@gmail.com").withGroup("[none]"),
-                    true);
-        }
+                            .withPhoneNumber("571-241-6524").withEmailAddress("gaidarenko1241@gmail.com")
+                    .inGroup(app.db().groups().iterator().next()), true);
+}
     }
 
     @Test

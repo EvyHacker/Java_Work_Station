@@ -3,6 +3,8 @@ package usa.stqa.pft.addressbook.appmanager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+
+import org.openqa.selenium.support.ui.Select;
 import usa.stqa.pft.addressbook.model.ContactData;
 import usa.stqa.pft.addressbook.model.Contacts;
 
@@ -48,8 +50,19 @@ public class ContactHelper extends HelperBase {
 	private void selectContactById(int id) {
 		wd.findElement(By.name("selected[]")).click();
 	}
+	private void selectToGroup(Integer idGroup) {
+		new Select(wd.findElement(By.name("to_group"))).selectByValue(String.valueOf(idGroup));
+	}
 
-	private void goToContactPage() {
+	private void CopyToGroup() {
+		wd.findElement(By.name("add")).click();
+	}
+
+	public void messageCompleteAddedContactToGroup() {
+		wd.findElement(By.xpath("//*[contains(text(), 'Users added')]"));
+	}
+
+		private void goToContactPage() {
 		wd.findElement(By.xpath("//*[@id=\"nav\"]/ul/li[1]/a")).click();
 	}
 
@@ -75,8 +88,33 @@ public class ContactHelper extends HelperBase {
 	public void deleteSelectedContact() {
 		click(By.xpath("//*[@id=\"content\"]/form[2]/div[2]/input"));
 		wd.switchTo().alert().accept();
-
 	}
+	public void addToGroup(ContactData contact, Integer idGroup) {
+		selectContactById(contact.getId());
+		selectToGroup(idGroup);
+		CopyToGroup();
+		messageCompleteAddedContactToGroup();
+	}
+
+	private void selectDeleteToGroup(Integer idGroup) {
+		new Select(wd.findElement(By.name("group"))).selectByValue(String.valueOf(idGroup));
+	}
+
+	private void removeFromGroup() {
+		wd.findElement(By.name("remove")).click();
+	}
+
+	public void messageRemovedContactFromGroup() {
+		wd.findElement(By.xpath("//*[contains(text(), 'Users removed')]"));
+	}
+
+	public void deleteFromGroup(ContactData contact, Integer idGroup) {
+		selectDeleteToGroup(idGroup);
+		selectContactById(contact.getId());
+		removeFromGroup();
+		messageRemovedContactFromGroup();
+	}
+
 	public void messageCompleteDeletionContacts() {
 		wd.findElement(By.xpath("//*[contains(text(), 'Record successful deleted')]"));
 	}
