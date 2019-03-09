@@ -41,3 +41,4 @@ addressbook -web-tests/src/test/java/.DS_Store
 *.class
 *.txt
 *.class
+*.txt
