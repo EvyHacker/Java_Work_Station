@@ -4,13 +4,10 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
-import org.testng.Assert;
 import usa.stqa.pft.addressbook.model.ContactData;
 import usa.stqa.pft.addressbook.model.Contacts;
 
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 public class ContactHelper extends HelperBase {
 
@@ -56,7 +53,7 @@ public class ContactHelper extends HelperBase {
 		new Select(wd.findElement(By.name("to_group"))).selectByValue(String.valueOf(idGroup));
 	}
 
-	private void cliclToGroup() {
+	private void CopyToGroup() {
 		wd.findElement(By.name("add")).click();
 	}
 
@@ -94,8 +91,27 @@ public class ContactHelper extends HelperBase {
 	public void addToGroup(ContactData contact, Integer idGroup) {
 		selectContactById(contact.getId());
 		selectToGroup(idGroup);
-		cliclToGroup();
+		CopyToGroup();
 		messageCompleteAddedContactToGroup();
+	}
+
+	private void selectDeleteToGroup(Integer idGroup) {
+		new Select(wd.findElement(By.name("group"))).selectByValue(String.valueOf(idGroup));
+	}
+
+	private void removeFromGroup() {
+		wd.findElement(By.name("remove")).click();
+	}
+
+	public void messageRemovedContactFromGroup() {
+		wd.findElement(By.xpath("//*[contains(text(), 'Users removed')]"));
+	}
+
+	public void deleteFromGroup(ContactData contact, Integer idGroup) {
+		selectDeleteToGroup(idGroup);
+		selectContactById(contact.getId());
+		removeFromGroup();
+		messageRemovedContactFromGroup();
 	}
 
 	public void messageCompleteDeletionContacts() {

@@ -70,7 +70,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
                     .filter(c -> (idContact == c.getId()))
                     .findAny()
                     .orElse(null);
-            
+
 
         }
     }
