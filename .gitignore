@@ -18,13 +18,9 @@ addressbook -web-tests/test-output/index.html
 addressbook -web-tests/build/classes/java/main/HelloWorld.class
 *.MF
 *.png
-*.xml
-*.html
-*.iml
 addressbook -web-tests/src/test/java/usa/stqa/pft/addressbook/.DS_Store
 *.css
 *.js
-*.properties
 *.gif
 *.class
 *.class

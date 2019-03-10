@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="6958" started-at="2019-02-03T19:04:24Z" finished-at="2019-02-03T19:04:31Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="6958" started-at="2019-02-03T19:04:24Z" finished-at="2019-02-03T19:04:31Z">
+      <class name="usa.stqa.pft.addressbook.test.ContactModificationTest">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:usa.stqa.pft.addressbook.test.ContactModificationTest@27efef64]" name="setUp" is-config="true" duration-ms="1932" started-at="2019-02-03T19:04:24Z" finished-at="2019-02-03T19:04:26Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="testContactModification()[pri:0, instance:usa.stqa.pft.addressbook.test.ContactModificationTest@27efef64]" name="testContactModification" duration-ms="4930" started-at="2019-02-03T19:04:26Z" finished-at="2019-02-03T19:04:30Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testContactModification -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:usa.stqa.pft.addressbook.test.ContactModificationTest@27efef64]" name="tearDown" is-config="true" duration-ms="80" started-at="2019-02-03T19:04:30Z" finished-at="2019-02-03T19:04:31Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- usa.stqa.pft.addressbook.test.ContactModificationTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
