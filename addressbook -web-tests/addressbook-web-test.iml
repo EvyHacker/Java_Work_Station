@@ -29,31 +29,26 @@ dependencies {
 
     // Use JUnit test framework
     //testImplementation 'junit:junit:4.12'
-    
+
     // https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java
 	compile group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '3.141.59'
     compile 'org.testng:testng:6.14.3'
     compile 'org.seleniumhq.selenium:selenium-java:3.141.59'
     compile 'org.hamcrest:hamcrest:2.1'
-    compile 'org.apache.httpcomponents:httpclient:4.5.7'
-    compile 'commons-net:commons-net:3.6'
+    compile group: 'com.beust', name: 'jcommander', version: '1.72'
+    compile group: 'com.thoughtworks.xstream', name: 'xstream', version: '1.4.11.1'
+    compile group: 'com.google.code.gson', name: 'gson', version: '2.8.5'
+
 }
 
-tasks.withType(JavaCompile) {
-    options.encoding = 'UTF-8'
-}
-
-test  {
+task testGroups (type: Test) {
     useTestNG {
-        suites 'src/test/resources/testNG.xml'
+        suites 'src/test/resources/testNG-groups.xml'
     }
-    if (project.hasProperty('browser')){
+}
+    task testContacts (type: Test) {
+        useTestNG{
+            suites 'src/test/resources/testNG-contacts.xml'
+        }
         systemProperty 'browser', "${browser}"
-    }
-    if (project.hasProperty('target')){
-        systemProperty 'target', "${target}"
-    }
-    if (project.hasProperty('verifyUI')){
-        systemProperty 'verifyUI', "${verifyUI}"
-    }
 }
