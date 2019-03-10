@@ -39,9 +39,7 @@ addressbook -web-tests/src/test/java/.DS_Store
 *.class
 *.class
 *.class
-*.txt
 *.class
-*.txt
 mantis-test/.DS_Store
 mantis-test/src/.DS_Store
 mantis-test/src/test/.DS_Store
