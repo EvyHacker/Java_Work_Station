@@ -26,7 +26,7 @@ public class HttpSession {
     }
 
     public boolean login(String username, String password) throws IOException {
-        HttpPost post = new HttpPost(app.getProperty("web.baseUrl") + "/login_page.php");
+        HttpPost post = new HttpPost(app.getProperty("web.baseURL") + "/login_page.php");
         List<NameValuePair> params = new ArrayList<NameValuePair>();
         params.add(new BasicNameValuePair("username", username));
         params.add(new BasicNameValuePair("password", password));
@@ -47,7 +47,7 @@ public class HttpSession {
     }
 
     public boolean isLoggedInAs(String username) throws IOException {
-        HttpGet get = new HttpGet(app.getProperty("web.baseUrl") + "/index.php");
+        HttpGet get = new HttpGet(app.getProperty("web.baseURL") + "/index.php");
         CloseableHttpResponse response = httpclient.execute(get);
         String body = getTextFrom(response);
         return body.contains(String.format("<span class\"italic\">%s</span>", username));
