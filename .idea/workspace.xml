@@ -82,54 +82,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mantis-test/src/test/java/usa/stqa/pft/mantis/appmanager/HttpSession.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="431">
-              <caret line="55" lean-forward="true" selection-start-line="55" selection-end-line="55" />
+            <state relative-caret-position="494">
+              <caret line="56" lean-forward="true" selection-start-line="56" selection-end-line="56" />
               <folding>
                 <element signature="e#824#839#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.httpcomponents/httpclient/4.5.7/ba949cc0e7624718c2ace165fd362f54f36eebd7/httpclient-4.5.7-sources.jar!/org/apache/http/client/methods/HttpPost.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="363">
-              <caret line="73" selection-start-line="73" selection-end-line="73" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.httpcomponents/httpclient/4.5.7/ba949cc0e7624718c2ace165fd362f54f36eebd7/httpclient-4.5.7-sources.jar!/org/apache/http/client/methods/HttpEntityEnclosingRequestBase.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="48" selection-start-line="48" selection-end-line="48" />
-              <folding>
-                <element signature="e#1737#1738#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.httpcomponents/httpclient/4.5.7/ba949cc0e7624718c2ace165fd362f54f36eebd7/httpclient-4.5.7-sources.jar!/org/apache/http/client/methods/HttpRequestBase.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="43" selection-start-line="43" selection-end-line="43" />
-              <folding>
-                <element signature="e#3183#3184#0" expanded="true" />
-                <element signature="e#3213#3214#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.httpcomponents/httpclient/4.5.7/ba949cc0e7624718c2ace165fd362f54f36eebd7/httpclient-4.5.7-sources.jar!/org/apache/http/client/methods/AbstractExecutionAwareRequest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="50" selection-start-line="50" selection-end-line="50" />
             </state>
           </provider>
         </entry>
@@ -158,23 +115,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/mantis-test/src/test/java/usa/stqa/pft/mantis/test/LoginTests.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" selection-start-line="14" selection-end-line="14" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.testng/testng/6.14.3/bfd2538501a129a142fe8366169c48b91609dc0b/testng-6.14.3-sources.jar!/org/testng/internal/Invoker.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="181">
-              <caret line="592" selection-start-line="592" selection-end-line="592" />
+            <state relative-caret-position="75">
+              <caret line="5" column="27" lean-forward="true" selection-start-line="5" selection-start-column="27" selection-end-line="5" selection-end-column="27" />
             </state>
           </provider>
         </entry>
@@ -249,10 +194,10 @@
         <option value="$PROJECT_DIR$/mantis-test/src/test/java/usa/stqa/pft/mantis/test/TestBase.java" />
         <option value="$PROJECT_DIR$/mantis-test/src/test/java/usa/stqa/pft/mantis/appmanager/ApplicationManager.java" />
         <option value="$PROJECT_DIR$/mantis-test/src/test/resources/test.xml" />
-        <option value="$PROJECT_DIR$/mantis-test/src/test/java/usa/stqa/pft/mantis/test/LoginTests.java" />
         <option value="$PROJECT_DIR$/mantis-test/src/test/resources/local.properties" />
-        <option value="$PROJECT_DIR$/mantis-test/src/test/java/usa/stqa/pft/mantis/appmanager/HttpSession.java" />
         <option value="$PROJECT_DIR$/mantis-test/build.gradle" />
+        <option value="$PROJECT_DIR$/mantis-test/src/test/java/usa/stqa/pft/mantis/appmanager/HttpSession.java" />
+        <option value="$PROJECT_DIR$/mantis-test/src/test/java/usa/stqa/pft/mantis/test/LoginTests.java" />
       </list>
     </option>
   </component>
@@ -316,7 +261,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552243831003" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552245131508" />
     <property name="extract.method.default.visibility" value="private" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
@@ -344,7 +289,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="TestNG.LoginTests.testLogin">
+  <component name="RunManager" selected="TestNG.LoginTests">
     <configuration name="mantis-test" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -518,8 +463,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.LoginTests.testLogin" />
         <item itemvalue="TestNG.LoginTests" />
+        <item itemvalue="TestNG.LoginTests.testLogin" />
         <item itemvalue="Gradle.mantis-test" />
         <item itemvalue="TestNG.DeleteContactFromGroupTest" />
         <item itemvalue="TestNG.AddContactToGroupTest" />
@@ -540,18 +485,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="LoginTests - 2019.03.10 at 14h 07m 02s.xml">
-      <configuration name="LoginTests" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="LoginTests - 2019.03.10 at 14h 07m 39s.xml">
-      <configuration name="LoginTests" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="LoginTests - 2019.03.10 at 14h 10m 27s.xml">
-      <configuration name="LoginTests" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="LoginTests - 2019.03.10 at 14h 22m 37s.xml">
-      <configuration name="LoginTests" configurationId="TestNG" />
-    </history-entry>
     <history-entry file="LoginTests - 2019.03.10 at 14h 22m 47s.xml">
       <configuration name="LoginTests" configurationId="TestNG" />
     </history-entry>
@@ -570,6 +503,18 @@
     <history-entry file="LoginTests - 2019.03.10 at 14h 38m 35s.xml">
       <configuration name="LoginTests" configurationId="TestNG" />
     </history-entry>
+    <history-entry file="LoginTests_testLogin - 2019.03.10 at 14h 53m 16s.xml">
+      <configuration name="LoginTests.testLogin" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="LoginTests - 2019.03.10 at 14h 53m 53s.xml">
+      <configuration name="LoginTests" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="LoginTests - 2019.03.10 at 14h 58m 38s.xml">
+      <configuration name="LoginTests" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="LoginTests - 2019.03.10 at 15h 05m 20s.xml">
+      <configuration name="LoginTests" configurationId="TestNG" />
+    </history-entry>
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -582,6 +527,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1" y="23" width="1679" height="972" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Designer" order="0" />
       <window_info id="Capture Tool" order="1" />
@@ -597,8 +543,8 @@
       <window_info anchor="bottom" id="Version Control" order="4" />
       <window_info anchor="bottom" id="Message" order="5" />
       <window_info anchor="bottom" id="Find" order="6" weight="0.3284091" />
-      <window_info anchor="bottom" id="Run" order="7" weight="0.36704546" />
-      <window_info active="true" anchor="bottom" id="Debug" order="8" visible="true" weight="0.35454544" />
+      <window_info active="true" anchor="bottom" id="Run" order="7" visible="true" weight="0.36704546" />
+      <window_info anchor="bottom" id="Debug" order="8" weight="0.35454544" />
       <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="10" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="11" weight="0.32954547" />
@@ -623,7 +569,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/mantis-test/src/test/java/usa/stqa/pft/mantis/appmanager/HttpSession.java</url>
-          <line>51</line>
+          <line>52</line>
           <properties />
           <option name="timeStamp" value="4" />
         </line-breakpoint>
@@ -1093,10 +1039,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.testng/testng/6.14.3/bfd2538501a129a142fe8366169c48b91609dc0b/testng-6.14.3-sources.jar!/org/testng/internal/Invoker.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="421">
+          <caret line="608" column="5" lean-forward="true" selection-start-line="607" selection-start-column="53" selection-end-line="608" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/mantis-test/src/test/java/usa/stqa/pft/mantis/appmanager/HttpSession.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="431">
-          <caret line="55" lean-forward="true" selection-start-line="55" selection-end-line="55" />
+        <state relative-caret-position="494">
+          <caret line="56" lean-forward="true" selection-start-line="56" selection-end-line="56" />
           <folding>
             <element signature="e#824#839#0" expanded="true" />
           </folding>
@@ -1105,18 +1058,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/mantis-test/src/test/java/usa/stqa/pft/mantis/test/LoginTests.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" selection-start-line="14" selection-end-line="14" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.testng/testng/6.14.3/bfd2538501a129a142fe8366169c48b91609dc0b/testng-6.14.3-sources.jar!/org/testng/internal/Invoker.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="181">
-          <caret line="592" selection-start-line="592" selection-end-line="592" />
+        <state relative-caret-position="75">
+          <caret line="5" column="27" lean-forward="true" selection-start-line="5" selection-start-column="27" selection-end-line="5" selection-end-column="27" />
         </state>
       </provider>
     </entry>
