@@ -19,6 +19,7 @@ public class ApplicationManager {
 	private final Properties properties;
 	private RegistrationHelper registrationHelper;
 	private FtpHelper ftp;
+	private SoapHelper soapHelper;
 
 	public ApplicationManager(String browser)  {
 
@@ -77,5 +78,12 @@ public class ApplicationManager {
 			wd.get(properties.getProperty("web.baseURL"));
 		}
 		return wd;
+	}
+
+	public SoapHelper soap(){
+		if (soapHelper == null){
+			soapHelper = new SoapHelper(this);
+		}
+		return soapHelper;
 	}
 }
