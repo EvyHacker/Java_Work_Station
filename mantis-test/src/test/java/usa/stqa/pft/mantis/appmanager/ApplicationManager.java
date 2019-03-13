@@ -12,6 +12,9 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 
 public class ApplicationManager {
 	private WebDriver wd;
@@ -20,6 +23,7 @@ public class ApplicationManager {
 	private RegistrationHelper registrationHelper;
 	private FtpHelper ftp;
 	private SoapHelper soapHelper;
+	private Logger logger;
 
 	public ApplicationManager(String browser)  {
 
@@ -36,6 +40,14 @@ public class ApplicationManager {
 		if (wd != null){
 			wd.quit();
 		}
+	}
+
+	@SuppressWarnings("WeakerAccess")
+	public Logger log() {
+		if (logger == null) {
+			logger = LoggerFactory.getLogger(ApplicationManager.class);
+		}
+		return logger;
 	}
 
 	public HttpSession newSession(){

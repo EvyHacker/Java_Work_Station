@@ -1,8 +1,23 @@
 package usa.stqa.pft.mantis.model;
 
+import biz.futureware.mantis.rpc.soap.client.ProjectData;
+
 public class Project {
     private int id;
     private String name;
+    private ProjectData projectData;
+
+    public Project(){
+        projectData = new ProjectData();
+    }
+
+    public Project (ProjectData projectData){
+        this.projectData = projectData;
+    }
+
+    public ProjectData data(){
+        return projectData;
+    }
 
     public int getId() {
         return id;
