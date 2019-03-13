@@ -168,7 +168,7 @@
         <entry file="file://$PROJECT_DIR$/mantis-test/src/test/java/usa/stqa/pft/mantis/test/SoapTest.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="120">
-              <caret line="8" column="38" lean-forward="true" selection-start-line="8" selection-end-line="8" selection-end-column="38" />
+              <caret line="8" column="38" selection-start-line="8" selection-end-line="8" selection-end-column="38" />
             </state>
           </provider>
         </entry>
@@ -177,7 +177,7 @@
         <entry file="file://$PROJECT_DIR$/mantis-test/src/test/java/usa/stqa/pft/mantis/model/Issue.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="795">
-              <caret line="96" column="1" lean-forward="true" selection-start-line="96" selection-start-column="1" selection-end-line="96" selection-end-column="1" />
+              <caret line="96" column="1" selection-start-line="96" selection-start-column="1" selection-end-line="96" selection-end-column="1" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#400#401#0" expanded="true" />
@@ -202,8 +202,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mantis-test/src/test/java/usa/stqa/pft/mantis/test/TestBase.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="62" column="5" lean-forward="true" selection-start-line="62" selection-start-column="5" selection-end-line="62" selection-end-column="5" />
+            <state relative-caret-position="915">
+              <caret line="61" column="9" selection-start-line="61" selection-start-column="9" selection-end-line="61" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -259,16 +259,12 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/mantis-test/src/test/java/usa/stqa/pft/mantis/appmanager/SoapHelper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+            <state relative-caret-position="795">
+              <caret line="53" column="97" selection-start-line="53" selection-start-column="97" selection-end-line="53" selection-end-column="97" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#527#528#0" expanded="true" />
                 <element signature="e#557#558#0" expanded="true" />
-                <element signature="e#2750#2751#0" expanded="true" />
-                <element signature="e#2806#2807#0" expanded="true" />
-                <element signature="e#2839#2840#0" expanded="true" />
-                <element signature="e#2898#2899#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -278,7 +274,7 @@
         <entry file="file://$PROJECT_DIR$/mantis-test/src/test/java/usa/stqa/pft/mantis/test/MantisBugSystemTest.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="345">
-              <caret line="23" column="28" lean-forward="true" selection-start-line="23" selection-start-column="28" selection-end-line="23" selection-end-column="28" />
+              <caret line="23" column="28" selection-start-line="23" selection-start-column="28" selection-end-line="23" selection-end-column="28" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -561,7 +557,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552515030995" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552515470110" />
     <property name="extract.method.default.visibility" value="private" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
@@ -797,12 +793,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="MantisBugSystemTest - 2019.03.12 at 23h 14m 36s.xml">
-      <configuration name="MantisBugSystemTest" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="MantisBugSystemTest - 2019.03.12 at 23h 17m 41s.xml">
-      <configuration name="MantisBugSystemTest" configurationId="TestNG" />
-    </history-entry>
     <history-entry file="MantisBugSystemTest - 2019.03.12 at 23h 20m 27s.xml">
       <configuration name="MantisBugSystemTest" configurationId="TestNG" />
     </history-entry>
@@ -825,6 +815,12 @@
       <configuration name="MantisBugSystemTest" configurationId="TestNG" />
     </history-entry>
     <history-entry file="SoapTest - 2019.03.13 at 17h 32m 19s.xml">
+      <configuration name="SoapTest" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="SoapTest - 2019.03.13 at 18h 09m 04s.xml">
+      <configuration name="SoapTest" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="SoapTest - 2019.03.13 at 18h 10m 34s.xml">
       <configuration name="SoapTest" configurationId="TestNG" />
     </history-entry>
   </component>
@@ -1203,13 +1199,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mantis-test/src/test/resources/local.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="78" selection-start-line="4" selection-start-column="78" selection-end-line="4" selection-end-column="78" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mantis-test/src/test/java/usa/stqa/pft/mantis/model/Project.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
@@ -1232,7 +1221,7 @@
     <entry file="file://$PROJECT_DIR$/mantis-test/src/test/java/usa/stqa/pft/mantis/test/SoapTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
-          <caret line="8" column="38" lean-forward="true" selection-start-line="8" selection-end-line="8" selection-end-column="38" />
+          <caret line="8" column="38" selection-start-line="8" selection-end-line="8" selection-end-column="38" />
         </state>
       </provider>
     </entry>
@@ -1249,7 +1238,7 @@
     <entry file="file://$PROJECT_DIR$/mantis-test/src/test/java/usa/stqa/pft/mantis/test/MantisBugSystemTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
-          <caret line="23" column="28" lean-forward="true" selection-start-line="23" selection-start-column="28" selection-end-line="23" selection-end-column="28" />
+          <caret line="23" column="28" selection-start-line="23" selection-start-column="28" selection-end-line="23" selection-end-column="28" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1259,7 +1248,7 @@
     <entry file="file://$PROJECT_DIR$/mantis-test/src/test/java/usa/stqa/pft/mantis/model/Issue.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="795">
-          <caret line="96" column="1" lean-forward="true" selection-start-line="96" selection-start-column="1" selection-end-line="96" selection-end-column="1" />
+          <caret line="96" column="1" selection-start-line="96" selection-start-column="1" selection-end-line="96" selection-end-column="1" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#400#401#0" expanded="true" />
@@ -1282,26 +1271,29 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/mantis-test/src/test/java/usa/stqa/pft/mantis/test/TestBase.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="62" column="5" lean-forward="true" selection-start-line="62" selection-start-column="5" selection-end-line="62" selection-end-column="5" />
+        <state relative-caret-position="915">
+          <caret line="61" column="9" selection-start-line="61" selection-start-column="9" selection-end-line="61" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/mantis-test/src/test/resources/local.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="78" selection-start-line="4" selection-start-column="78" selection-end-line="4" selection-end-column="78" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/mantis-test/src/test/java/usa/stqa/pft/mantis/appmanager/SoapHelper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+        <state relative-caret-position="795">
+          <caret line="53" column="97" selection-start-line="53" selection-start-column="97" selection-end-line="53" selection-end-column="97" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#527#528#0" expanded="true" />
             <element signature="e#557#558#0" expanded="true" />
-            <element signature="e#2750#2751#0" expanded="true" />
-            <element signature="e#2806#2807#0" expanded="true" />
-            <element signature="e#2839#2840#0" expanded="true" />
-            <element signature="e#2898#2899#0" expanded="true" />
           </folding>
         </state>
       </provider>
